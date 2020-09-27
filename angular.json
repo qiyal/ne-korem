@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ne-korem"
+    }
+  },
+  "defaultProject": "ne-korem",
+  "cli": {
+    "analytics": "716e1fa7-e747-49cb-bd90-692024787c67"
+  }
 }
