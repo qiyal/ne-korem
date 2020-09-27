@@ -1,0 +1,19 @@
+footer {
+  height: 187px;
+  background-color: #383C40;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+#vk {
+  background: center center url('../../assets/icons/vk.svg');
+}
+
