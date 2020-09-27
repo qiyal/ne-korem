@@ -1,7 +1,21 @@
 .editorial-carousel {
+  margin-top: 50px;
   height: 340px;
+  max-width: 100%;
+  background-color: black;
+  overflow: hidden;
+}
+
+.flex {
+  width: 3000px;
+  display: flex;
+}
+
+.movie {
+  width: 500px;
+  background-color: aqua;
 }
 
 .img {
-  width: 247px;
+  height: 247px;
 }

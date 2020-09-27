@@ -1,12 +1,17 @@
 <div class="editorial-carousel">
+
   <div class="flex">
+
     <div class="movie" *ngFor="let movie of movies">
       <div class="img">
-
+        <img [src]="movie.imgSrc" [alt]="movie.name + 'image'">
       </div>
       <div class="texts">
-
+        <p>{{movie.name}}</p>
+        <p>Text text text text text text text text text text text text text text text text</p>
       </div>
     </div>
+
   </div>
+
 </div>
