@@ -12,10 +12,15 @@
 }
 
 .movie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 500px;
   background-color: aqua;
 }
 
 .img {
-  height: 247px;
+  img {
+    height: 247px;
+  }
 }
