@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter, OnChanges, OnDestroy, SimpleChanges} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, OnChanges, OnDestroy, SimpleChanges, DoCheck} from '@angular/core';
 import {Movie} from '../objects/movie';
 
 @Component({
@@ -6,7 +6,7 @@ import {Movie} from '../objects/movie';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnChanges, OnInit, OnDestroy {
+export class CardComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
   @Output() deleteMoviesInHistoryWatching = new EventEmitter<number>();
   @Input() movie: Movie;
   @Input() movieIndex: number;
@@ -27,6 +27,10 @@ export class CardComponent implements OnChanges, OnInit, OnDestroy {
   ngOnInit(): void {
     this.percent = Math.floor(this.movie.time * 100 / this.movie.totalTime) + '%';
     console.log('CardComponent: OnInit(set percent variable)');
+  }
+
+  ngDoCheck() {
+    console.log('CardComponent: DoCheck');
   }
 
   ngOnDestroy() {
