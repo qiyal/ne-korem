@@ -1,4 +1,5 @@
 main {
+  width: 100%;
   background-color: #272d33;
   box-sizing: border-box;
   padding: 30px 72px;
@@ -7,6 +8,7 @@ main {
     font-size: 20px;
     line-height: 16px;
   }
+  overflow: hidden;
 }
 
 .banner {
