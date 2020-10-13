@@ -16,25 +16,25 @@ export class CardComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges) {
-    for (const propName in changes) {
-      const chng = changes[propName];
-      const cur  = JSON.stringify(chng.currentValue);
-      const prev = JSON.stringify(chng.previousValue);
-      console.log(`CardComponent: ${propName}: currentValue = ${cur}, previousValue = ${prev}`);
-    }
+    // for (const propName in changes) {
+    //   const chng = changes[propName];
+    //   const cur  = JSON.stringify(chng.currentValue);
+    //   const prev = JSON.stringify(chng.previousValue);
+    //   console.log(`CardComponent: ${propName}: currentValue = ${cur}, previousValue = ${prev}`);
+    // }
   }
 
   ngOnInit(): void {
     this.percent = Math.floor(this.movie.time * 100 / this.movie.totalTime) + '%';
-    console.log('CardComponent: OnInit(set percent variable)');
+    // console.log('CardComponent: OnInit(set percent variable)');
   }
 
   ngDoCheck() {
-    console.log('CardComponent: DoCheck');
+    // console.log('CardComponent: DoCheck');
   }
 
   ngOnDestroy() {
-    console.log('CardComponent: OnDestroy');
+    // console.log('CardComponent: OnDestroy');
   }
 
   deleteMovieInHistory() {

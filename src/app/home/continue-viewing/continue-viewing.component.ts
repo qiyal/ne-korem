@@ -12,12 +12,12 @@ export class ContinueViewingComponent implements OnChanges, OnInit, DoCheck, OnD
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges) {
-    for (const propName in changes) {
-      const chng = changes[propName];
-      const cur  = JSON.stringify(chng.currentValue);
-      const prev = JSON.stringify(chng.previousValue);
-      console.log(`ContinueViewingComponent: ${propName}: currentValue = ${cur}, previousValue = ${prev}`);
-    }
+    // for (const propName in changes) {
+    //   const chng = changes[propName];
+    //   const cur  = JSON.stringify(chng.currentValue);
+    //   const prev = JSON.stringify(chng.previousValue);
+    //   console.log(`ContinueViewingComponent: ${propName}: currentValue = ${cur}, previousValue = ${prev}`);
+    // }
   }
 
   ngOnInit(): void {
@@ -26,15 +26,15 @@ export class ContinueViewingComponent implements OnChanges, OnInit, DoCheck, OnD
       new Movie(1400, 6170, '1 h 21 min', '../../assets/images/movies/movie9.webp', 'A Dog\'s Purpose 2', 5.0, new Date(1990, 1, 1)),
       new Movie(4988, 6170, '45 min', '../../assets/images/movies/movie2.webp', 'Supernatural', 8.5, new Date(1990, 1, 1)),
     ];
-    console.log('ContinueViewingComponent: OnInit(movies variable)');
+    // console.log('ContinueViewingComponent: OnInit(movies variable)');
   }
 
   ngDoCheck() {
-    console.log('ContinueViewingComponent: DoChek');
+    // console.log('ContinueViewingComponent: DoChek');
   }
 
   ngOnDestroy() {
-    console.log('ContinueViewingComponent: OnDestroy');
+    // console.log('ContinueViewingComponent: OnDestroy');
   }
 
   deleteInArr(index: number) {

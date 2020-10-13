@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, QueryList, ViewChildren, AfterViewInit, ViewChild} from '@angular/core';
+import {CarouselComponent} from './carousel/carousel.component';
 
 @Component({
   selector: 'app-home',

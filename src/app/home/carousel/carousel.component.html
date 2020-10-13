@@ -5,7 +5,52 @@
   </div>
 
   <div class="flex">
-    <app-carousel-card *ngFor="let movie of movies" [movie]="movie"></app-carousel-card>
+    <app-carousel-card *ngFor="let movie of movies" [movie]="movie" (click)="onClickMovieCarouselCard(movie)"></app-carousel-card>
+  </div>
+
+  <div class="movies-details" *ngIf="showMovieDetail">
+    <img src="../../assets/images/movie_details/movie1.webp" alt="">
+    <div class="content-details">
+      <div class="details-title">
+        <button [ngClass]="{'clickBtn': !aboutClick }" (click)="aboutBtnClick()">О фильме</button>
+        <button [ngClass]="{'clickBtn': !detailsClick }" (click)="detailsBtnClick()">Детали</button>
+      </div>
+
+      <div class="movie-about-data" *ngIf="aboutClick">
+        <h1>{{lastShowMovie.name}}</h1>
+        <p [ngStyle]="{'font-size': '15px'}">
+          <span [ngStyle]="{'color': setRating(lastShowMovie.rating)}">{{lastShowMovie.rating}}</span>
+          <span> {{lastShowMovie.date.getFullYear()}},</span>
+          <span> боевик, комедия, </span>
+          <span>США </span>
+          <span>1 ч 48 мин</span>
+        </p>
+        <p class="movie-title1">Успешное возвращение Гая Ричи к корням — острая и живая криминальная комедия с блестящим актерским составом</p>
+
+        <div class="btns-box">
+          <button class="watch-movie">
+            <mat-icon>play_arrow</mat-icon>
+            <span>Смотреть</span>
+          </button>
+          <button class="action-btns">
+            <mat-icon>bookmark</mat-icon>
+          </button>
+          <button class="action-btns">
+            <mat-icon>videocam</mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="movie-about-data" *ngIf="detailsClick">
+        <h1>{{lastShowMovie.name}}</h1>
+        <div>
+          <span [ngStyle]="{'color': setRating(lastShowMovie.rating)}">{{lastShowMovie.rating}}</span>
+        </div>
+        <div>485219 оценок</div>
+        <p class="movie-title1">Ушлый наркоторговец придумал схему нелегального обогащения — с использованием поместий обедневшей английской аристократии. На успешный бизнес заглядываются партнер-еврей, китайская диаспора, темнокожие спортсмены и русский олигарх.</p>
+      </div>
+
+    </div>
   </div>
 
 </div>
