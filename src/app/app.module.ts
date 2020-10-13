@@ -13,6 +13,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { CarouselCardComponent } from './carousel-card/carousel-card.component';
 import { EditorialBoxComponent } from './home/editorial-box/editorial-box.component';
+import { EditorialsListComponent } from './home/editorials-list/editorials-list.component';
+import { ConverternumberPipe } from './pipes/converternumber.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { EditorialBoxComponent } from './home/editorial-box/editorial-box.compon
     CarouselComponent,
     CarouselCardComponent,
     EditorialBoxComponent,
+    EditorialsListComponent,
+    ConverternumberPipe
   ],
   imports: [
     BrowserModule,

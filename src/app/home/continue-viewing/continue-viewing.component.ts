@@ -22,8 +22,9 @@ export class ContinueViewingComponent implements OnChanges, OnInit, DoCheck, OnD
 
   ngOnInit(): void {
     this.movies = [
-      new Movie(3000, 6170, '1 h 42 min', '../../assets/images/movies/movie7.webp', 'Fantastic Beasts and Where to Find Them', 9.0),
-      new Movie(1400, 6170, '1 h 21 min', '../../assets/images/movies/movie9.webp', 'A Dog\'s Purpose 2', 5.0),
+      new Movie(3000, 6170, '1 h 42 min', '../../assets/images/movies/movie7.webp', 'Fantastic Beasts and Where to Find Them', 9.0, new Date(1990, 1, 1)),
+      new Movie(1400, 6170, '1 h 21 min', '../../assets/images/movies/movie9.webp', 'A Dog\'s Purpose 2', 5.0, new Date(1990, 1, 1)),
+      new Movie(4988, 6170, '45 min', '../../assets/images/movies/movie2.webp', 'Supernatural', 8.5, new Date(1990, 1, 1)),
     ];
     console.log('ContinueViewingComponent: OnInit(movies variable)');
   }

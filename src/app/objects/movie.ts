@@ -5,7 +5,8 @@ export class Movie {
     public timeHour: string,
     public imgSrc: string,
     public name: string,
-    public rating: number
+    public rating: number,
+    public date: Date
   ) {
   }
 }
