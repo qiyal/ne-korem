@@ -10,7 +10,7 @@
 
   <div class="movies-details" *ngIf="showMovieDetail">
 
-    <img [ngClass]="{'blur': detailsClick}" class="bg-img" src="../../assets/images/movie_details/movie1.webp" alt="">
+    <img [ngClass]="{'blur': detailsClick}" class="bg-img" src="{{lastShowMovie.imgBigSrc}}" alt="">
 
     <div class="content-details">
       <div class="details-title">

@@ -8,11 +8,18 @@ import {Movies} from '../objects/movies';
 })
 export class ShopComponent implements OnInit {
   inputChildData: Movies;
+  status;
 
   constructor() { }
 
   ngOnInit(): void {
     this.inputChildData = new Movies();
+    this.status = 'qwe';
+  }
+
+  checkGenreF(str: string) {
+    this.status = str;
+    console.log(str);
   }
 
 }
