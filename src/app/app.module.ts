@@ -20,6 +20,7 @@ import { ShopComponent } from './shop/shop.component';
 import { DiscountvaluePipe } from './pipes/discountvalue.pipe';
 import { EditorialComponent } from './editorial/editorial.component';
 import { EditorialCardComponent } from './editorial/editorial-card/editorial-card.component';
+import { CatalogComponent } from './catalog/catalog.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EditorialCardComponent } from './editorial/editorial-card/editorial-car
     ShopComponent,
     DiscountvaluePipe,
     EditorialComponent,
-    EditorialCardComponent
+    EditorialCardComponent,
+    CatalogComponent
   ],
     imports: [
         BrowserModule,
