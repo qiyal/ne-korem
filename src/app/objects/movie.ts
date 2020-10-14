@@ -6,7 +6,9 @@ export class Movie {
     public imgSrc: string,
     public name: string,
     public rating: number,
-    public date: Date
+    public date: Date,
+    public price: number,
+    public discount: number
   ) {
   }
 }

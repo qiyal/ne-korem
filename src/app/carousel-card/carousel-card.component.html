@@ -1,6 +1,7 @@
 <div class="carousel-card">
   <div class="content">
     <img [src]="movie.imgSrc" [alt]="movie.name + 'image'">
-    <span [ngStyle]="{ 'background-color': rating }">{{movie.rating}}</span>
+    <span class="not-free" *ngIf="free" [ngStyle]="{ 'background-color': rating }">{{movie.rating}}</span>
+    <span class="free" *ngIf="!free">{{ movie.price | currency: 'KZ'}} / {{movie.price | discountvalue: movie.discount | currency: 'KZ'}}</span>
   </div>
 </div>

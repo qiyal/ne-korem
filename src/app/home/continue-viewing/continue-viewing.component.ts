@@ -1,5 +1,6 @@
-import {Component, DoCheck, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import {Movie} from '../../objects/movie';
+import {Movies} from '../../objects/movies';
 
 @Component({
   selector: 'app-continue-viewing',
@@ -7,7 +8,7 @@ import {Movie} from '../../objects/movie';
   styleUrls: ['./continue-viewing.component.scss']
 })
 export class ContinueViewingComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
-  movies: Movie[];
+  @Input() movies: Movies;
 
   constructor() { }
 
@@ -21,11 +22,6 @@ export class ContinueViewingComponent implements OnChanges, OnInit, DoCheck, OnD
   }
 
   ngOnInit(): void {
-    this.movies = [
-      new Movie(3000, 6170, '1 h 42 min', '../../assets/images/movies/movie7.webp', 'Fantastic Beasts and Where to Find Them', 9.0, new Date(1990, 1, 1)),
-      new Movie(1400, 6170, '1 h 21 min', '../../assets/images/movies/movie9.webp', 'A Dog\'s Purpose 2', 5.0, new Date(1990, 1, 1)),
-      new Movie(4988, 6170, '45 min', '../../assets/images/movies/movie2.webp', 'Supernatural', 8.5, new Date(1990, 1, 1)),
-    ];
     // console.log('ContinueViewingComponent: OnInit(movies variable)');
   }
 
@@ -39,7 +35,7 @@ export class ContinueViewingComponent implements OnChanges, OnInit, DoCheck, OnD
 
   deleteInArr(index: number) {
     console.log(index);
-    this.movies.splice(index, 1);
+    this.movies.arrContinueMovies.splice(index, 1);
     // console.log(this.movies);
   }
 

@@ -15,6 +15,11 @@ import { CarouselCardComponent } from './carousel-card/carousel-card.component';
 import { EditorialBoxComponent } from './home/editorial-box/editorial-box.component';
 import { EditorialsListComponent } from './home/editorials-list/editorials-list.component';
 import { ConverternumberPipe } from './pipes/converternumber.pipe';
+import {FormsModule} from '@angular/forms';
+import { ShopComponent } from './shop/shop.component';
+import { DiscountvaluePipe } from './pipes/discountvalue.pipe';
+import { EditorialComponent } from './editorial/editorial.component';
+import { EditorialCardComponent } from './editorial/editorial-card/editorial-card.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +33,19 @@ import { ConverternumberPipe } from './pipes/converternumber.pipe';
     CarouselCardComponent,
     EditorialBoxComponent,
     EditorialsListComponent,
-    ConverternumberPipe
+    ConverternumberPipe,
+    ShopComponent,
+    DiscountvaluePipe,
+    EditorialComponent,
+    EditorialCardComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatIconModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

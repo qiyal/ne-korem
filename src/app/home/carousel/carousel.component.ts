@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Movie} from '../../objects/movie';
+import {Movies} from '../../objects/movies';
 
 @Component({
   selector: 'app-carousel',
@@ -7,7 +8,8 @@ import {Movie} from '../../objects/movie';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
-  movies: Movie[];
+  @Input() genre: string;
+  @Input() movies: Movie;
   lastShowMovie: Movie;
   showMovieDetail;
   aboutClick = true;
@@ -26,12 +28,6 @@ export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
   ngOnInit(): void {
     this.lastShowMovie = null;
     this.showMovieDetail = false;
-    this.movies = [
-      new Movie(3000, 6170, '1 h 42 min', '../../assets/images/movies/movie1.webp', 'Movies - 1', 9.3, new Date(1990, 1, 1)),
-      new Movie(3000, 6170, '1 h 42 min', '../../assets/images/movies/movie2.webp', 'Movies - 2', 5.1, new Date(1990, 1, 1)),
-      new Movie(3000, 6170, '1 h 42 min', '../../assets/images/movies/movie3.webp', 'Movies - 3', 3.5, new Date(1990, 1, 1)),
-      new Movie(3000, 6170, '1 h 42 min', '../../assets/images/movies/movie4.webp', 'Movies - 4', 2.2, new Date(1990, 1, 1)),
-    ];
   }
 
   ngOnDestroy() {
@@ -70,5 +66,10 @@ export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
       this.aboutClick = false;
       this.detailsClick = true;
     }
+  }
+
+  closeDetail() {
+    this.showMovieDetail = false;
+    this.lastShowMovie = null;
   }
 }

@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  input: string;
+  clickSearch: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.input = '';
+    this.clickSearch = false;
   }
 
 }

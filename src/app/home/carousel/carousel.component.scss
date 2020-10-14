@@ -18,8 +18,8 @@
   height: 608px;
   margin-top: 15px;
   position: relative;
-
-  img {
+  overflow: hidden;
+  .bg-img {
     position: absolute;
     right: 0;
     height: 100%;
@@ -30,7 +30,8 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background: linear-gradient(89deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
     z-index: 15;
     box-sizing: border-box;
     padding: 0 72px;
@@ -71,11 +72,18 @@
 }
 
 .movie-title1 {
-  font-size: 22px;
+  font-size: 18px;
+  margin-top: 20px;
 }
 
 .movie-about-data {
   width: 520px;
+  padding: 100px 0 0 0;
+  box-sizing: border-box;
+  .img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
 
 .action-btns {
@@ -116,3 +124,41 @@
   color: #d7d5d5;
 }
 
+.change-sz {
+  width: 260px!important;
+}
+
+.width-sz {
+  width: 100%;
+  display: flex;
+}
+
+.blur {
+  filter: blur(20px);
+}
+
+.players-list {
+  margin-left: 200px;
+
+  div {
+    color: #ec7822;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  ul {
+    marker: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    li {
+      display: list-item;
+    }
+  }
+}
+
+.close-details-page {
+  right: 0;
+  position: absolute;
+}

@@ -1,7 +1,7 @@
 <div class="carousel">
 
   <div class="movie-genre">
-    <h2>Fantasy</h2>
+    <h2>{{genre}}</h2>
   </div>
 
   <div class="flex">
@@ -9,16 +9,19 @@
   </div>
 
   <div class="movies-details" *ngIf="showMovieDetail">
-    <img src="../../assets/images/movie_details/movie1.webp" alt="">
+
+    <img [ngClass]="{'blur': detailsClick}" class="bg-img" src="../../assets/images/movie_details/movie1.webp" alt="">
+
     <div class="content-details">
       <div class="details-title">
         <button [ngClass]="{'clickBtn': !aboutClick }" (click)="aboutBtnClick()">О фильме</button>
         <button [ngClass]="{'clickBtn': !detailsClick }" (click)="detailsBtnClick()">Детали</button>
+        <button class="close-details-page" (click)="closeDetail()">X</button>
       </div>
 
       <div class="movie-about-data" *ngIf="aboutClick">
-        <h1>{{lastShowMovie.name}}</h1>
-        <p [ngStyle]="{'font-size': '15px'}">
+        <img class="img" src="../../../assets/images/mivoes_logo_png/orig.png" alt="">
+        <p [ngStyle]="{'font-size': '16px'}">
           <span [ngStyle]="{'color': setRating(lastShowMovie.rating)}">{{lastShowMovie.rating}}</span>
           <span> {{lastShowMovie.date.getFullYear()}},</span>
           <span> боевик, комедия, </span>
@@ -41,13 +44,30 @@
         </div>
       </div>
 
-      <div class="movie-about-data" *ngIf="detailsClick">
-        <h1>{{lastShowMovie.name}}</h1>
-        <div>
-          <span [ngStyle]="{'color': setRating(lastShowMovie.rating)}">{{lastShowMovie.rating}}</span>
+      <div class="movie-about-data width-sz" *ngIf="detailsClick">
+        <div [ngStyle]="{'width': '642px'}">
+          <img class="img change-sz" src="../../../assets/images/mivoes_logo_png/orig.png" alt="">
+          <div>
+            <span [ngStyle]="{'color': setRating(lastShowMovie.rating), 'font-size': '18px', 'font-weight': 'bold'}">{{lastShowMovie.rating}}</span>
+          </div>
+          <div>485219 оценок</div>
+          <p class="movie-title1">Ушлый наркоторговец придумал схему нелегального обогащения — с использованием поместий обедневшей английской аристократии. На успешный бизнес заглядываются партнер-еврей, китайская диаспора, темнокожие спортсмены и русский олигарх.</p>
         </div>
-        <div>485219 оценок</div>
-        <p class="movie-title1">Ушлый наркоторговец придумал схему нелегального обогащения — с использованием поместий обедневшей английской аристократии. На успешный бизнес заглядываются партнер-еврей, китайская диаспора, темнокожие спортсмены и русский олигарх.</p>
+        <div class="players-list">
+          <div>В главных ролях</div>
+          <ul>
+            <li>Мэттью МакКонахи</li>
+            <li>Чарли Ханнэм</li>
+            <li>Генри Голдинг</li>
+            <li>Хью Грант</li>
+            <li>Мишель Докери</li>
+            <li>Джереми Стронг</li>
+            <li>Эдди Марсан</li>
+            <li>Джейсон Вонг</li>
+            <li>Колин Фаррелл</li>
+            <li>Лайн Рени</li>
+          </ul>
+        </div>
       </div>
 
     </div>

@@ -8,12 +8,15 @@ import {Movie} from '../objects/movie';
 })
 export class CarouselCardComponent implements OnInit {
   @Input() movie: Movie;
+  free: boolean;
   rating: string;
 
   constructor() { }
 
   ngOnInit(): void {
     this.setRating(this.movie.rating);
+    this.free = (this.movie.discount === 100);
+    console.log(this.movie.discount);
   }
 
   setRating(rating: number) {

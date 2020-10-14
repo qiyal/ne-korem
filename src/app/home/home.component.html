@@ -1,11 +1,11 @@
 <main>
-    <app-continue-viewing></app-continue-viewing>
-    <app-carousel></app-carousel>
-    <app-carousel></app-carousel>
+    <app-continue-viewing [movies]="inputData"></app-continue-viewing>
+    <app-carousel [genre]="'Fantasy'" [movies]="inputData.arrMovies1"></app-carousel>
+    <app-carousel [genre]="'New films'" [movies]="inputData.arrMovies1"></app-carousel>
 
   <app-editorial-box></app-editorial-box>
 
-    <app-carousel></app-carousel>
-    <app-carousel></app-carousel>
+    <app-carousel [genre]="'Disney'" [movies]="inputData.arrMovies1"></app-carousel>
+    <app-carousel [genre]="'Anime'" [movies]="inputData.arrMovies1"></app-carousel>
     <app-editorials-list></app-editorials-list>
 </main>
