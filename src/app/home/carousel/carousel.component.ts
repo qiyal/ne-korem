@@ -9,7 +9,18 @@ import {Movies} from '../../objects/movies';
 })
 export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
   @Input() genre: string;
+  @Input()
+  get checkGenre(): string { return this._checkGenre; }
+  set checkGenre(checkGenre: string) {
+    this._checkGenre = (checkGenre) || null;
+    if (this.checkGenre !== 'qwe' && this.checkGenre !== this.genre) {
+      this.closeDetail();
+    }
+  }
+  private _checkGenre;
   @Input() movies: Movie;
+  @Output() getGenre = new EventEmitter<string>();
+
   lastShowMovie: Movie;
   showMovieDetail;
   aboutClick = true;
@@ -28,6 +39,7 @@ export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
   ngOnInit(): void {
     this.lastShowMovie = null;
     this.showMovieDetail = false;
+    console.log(this.checkGenre);
   }
 
   ngOnDestroy() {
@@ -39,6 +51,7 @@ export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
     if (movie !== this.lastShowMovie) {
       this.lastShowMovie = movie;
       this.showMovieDetail = true;
+      this.getGenre.emit(this.genre);
     }
   }
 
