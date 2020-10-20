@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Movie} from '../../objects/movie';
-import {Movies} from '../../objects/movies';
 
 @Component({
   selector: 'app-carousel',
@@ -25,6 +24,7 @@ export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
   showMovieDetail;
   aboutClick = true;
   detailsClick = false;
+
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -39,16 +39,15 @@ export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
   ngOnInit(): void {
     this.lastShowMovie = null;
     this.showMovieDetail = false;
-    console.log(this.checkGenre);
   }
 
   ngOnDestroy() {
-    // this.showMovieDetail = false;
-    // console.log('CarouselComponent: OnDestroy');
   }
 
   onClickMovieCarouselCard(movie: Movie) {
     if (movie !== this.lastShowMovie) {
+      this.detailsClick = false;
+      this.aboutClick = true;
       this.lastShowMovie = movie;
       this.showMovieDetail = true;
       this.getGenre.emit(this.genre);

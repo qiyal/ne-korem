@@ -5,7 +5,7 @@
   </div>
 
   <div class="flex">
-    <app-carousel-card *ngFor="let movie of movies" [movie]="movie" (click)="onClickMovieCarouselCard(movie)"></app-carousel-card>
+    <app-carousel-card *ngFor="let movie of movies" [movie]="movie" [click]="(movie === lastShowMovie)" (click)="onClickMovieCarouselCard(movie)"></app-carousel-card>
   </div>
 
   <div class="movies-details" *ngIf="showMovieDetail">
@@ -45,7 +45,7 @@
       </div>
 
       <div class="movie-about-data width-sz" *ngIf="detailsClick">
-        <div [ngStyle]="{'width': '642px'}">
+        <div [ngStyle]="{'width': '642px', 'margin-top': '80px'}">
           <img class="img change-sz" src="../../../assets/images/mivoes_logo_png/orig.png" alt="">
           <div>
             <span [ngStyle]="{'color': setRating(lastShowMovie.rating), 'font-size': '18px', 'font-weight': 'bold'}">{{lastShowMovie.rating}}</span>
@@ -54,19 +54,45 @@
           <p class="movie-title1">Ушлый наркоторговец придумал схему нелегального обогащения — с использованием поместий обедневшей английской аристократии. На успешный бизнес заглядываются партнер-еврей, китайская диаспора, темнокожие спортсмены и русский олигарх.</p>
         </div>
         <div class="players-list">
-          <div>В главных ролях</div>
-          <ul>
-            <li>Мэттью МакКонахи</li>
-            <li>Чарли Ханнэм</li>
-            <li>Генри Голдинг</li>
-            <li>Хью Грант</li>
-            <li>Мишель Докери</li>
-            <li>Джереми Стронг</li>
-            <li>Эдди Марсан</li>
-            <li>Джейсон Вонг</li>
-            <li>Колин Фаррелл</li>
-            <li>Лайн Рени</li>
-          </ul>
+          <div class="child1">
+            <div>В главных ролях</div>
+            <ul>
+              <li>Мэттью МакКонахи</li>
+              <li>Чарли Ханнэм</li>
+              <li>Генри Голдинг</li>
+              <li>Хью Грант</li>
+              <li>Мишель Докери</li>
+              <li>Джереми Стронг</li>
+              <li>Эдди Марсан</li>
+              <li>Джейсон Вонг</li>
+              <li>Колин Фаррелл</li>
+              <li>Лайн Рени</li>
+            </ul>
+            <div>Режиссёры</div>
+            <ul>
+              <li>Гай Ричи</li>
+            </ul>
+          </div>
+          <div class="child2">
+            <div>Аудиодорожки</div>
+            <ul>
+              <li>Русский 5.1</li>
+              <li>Русский 5.1 (Кубик в Кубе)</li>
+              <li>Английский 5.1</li>
+            </ul>
+
+            <div>Субтитры</div>
+            <ul>
+              <li>Русские</li>
+              <li>Русский 5.1 (Кубик в Кубе)</li>
+              <li>Английский 5.1</li>
+            </ul>
+
+            <div>Оригинальное название</div>
+            <ul>
+              <li>The Gentlemen</li>
+            </ul>
+          </div>
         </div>
       </div>
 

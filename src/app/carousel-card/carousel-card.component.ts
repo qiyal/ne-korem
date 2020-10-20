@@ -10,13 +10,14 @@ export class CarouselCardComponent implements OnInit {
   @Input() movie: Movie;
   free: boolean;
   rating: string;
+  @Input() click: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.click = false;
     this.setRating(this.movie.rating);
     this.free = (this.movie.discount === 100);
-    console.log(this.movie.discount);
   }
 
   setRating(rating: number) {

@@ -1,5 +1,7 @@
 .carousel-card {
   margin-right: 30px;
+  border-radius: 12px;
+  box-sizing: border-box;
 }
 
 .content:hover {
@@ -48,5 +50,9 @@
     color: #fff;
     background-color: #ec7822;
   }
+}
+
+.is-click {
+  border: 2px solid #fff;
 }
 
