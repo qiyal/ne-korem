@@ -6,11 +6,14 @@ export class Movie {
     public timeHour: string,
     public imgSrc: string,
     public imgBigSrc: string,
+    public imgNameSrc: string,
     public name: string,
     public rating: number,
-    public date: Date,
+    public date: number,
     public price: number,
-    public discount: number
+    public discount: number,
+    public text: string,
+    public text2: string
   ) {
   }
 }
