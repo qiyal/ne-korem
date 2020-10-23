@@ -4,7 +4,7 @@
   </button>
   <div class="flex">
 
-      <div class="movie" *ngFor="let movie of movies.arrEditorial" [ngStyle]="{'transform': 'translateX(-' + total + '%)', 'background-color': movie.fon, 'background': movie.gradient}">
+      <div class="movie" *ngFor="let movie of movies" [ngStyle]="{'transform': 'translateX(-' + total + '%)', 'background-color': movie.fon, 'background': movie.gradient}">
         <div class="img">
           <img [src]="movie.movie.imgSrc" [alt]="movie.movie.name + 'image'">
         </div>

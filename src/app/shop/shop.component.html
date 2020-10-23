@@ -1,6 +1,6 @@
 <main>
-  <app-carousel [genre]="'New films'" [movies]="inputChildData.arrMovies2" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
-  <app-carousel [genre]="'Populars'" [movies]="inputChildData.arrMovies2" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
-  <app-carousel [genre]="'Хаяо Миядзаки и студия Ghibli'" [movies]="inputChildData.arrMovies2" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
-  <app-carousel [genre]="'Умная фантастика'" [movies]="inputChildData.arrMovies2" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
+  <app-carousel [genre]="'New films'" [movies]="doSpliceMovieService(17, 21)" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
+  <app-carousel [genre]="'Populars'" [movies]="doSpliceMovieService(21, 25)" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
+  <app-carousel [genre]="'Хаяо Миядзаки и студия Ghibli'" [movies]="doSpliceMovieService(25, 29)" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
+  <app-carousel [genre]="'Умная фантастика'" [movies]="doSpliceMovieService(27, 31)" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
 </main>

@@ -1,6 +1,7 @@
 import {Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import {Movie} from '../../objects/movie';
 import {Movies} from '../../objects/movies';
+import {ContinueMovieService} from '../../services/continue-movie.service';
 
 @Component({
   selector: 'app-continue-viewing',
@@ -8,9 +9,9 @@ import {Movies} from '../../objects/movies';
   styleUrls: ['./continue-viewing.component.scss']
 })
 export class ContinueViewingComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
-  @Input() movies: Movies;
+  movies: Movie[];
 
-  constructor() { }
+  constructor(private continueMovieService: ContinueMovieService) { }
 
   ngOnChanges(changes: SimpleChanges) {
     // for (const propName in changes) {
@@ -22,7 +23,7 @@ export class ContinueViewingComponent implements OnChanges, OnInit, DoCheck, OnD
   }
 
   ngOnInit(): void {
-    // console.log('ContinueViewingComponent: OnInit(movies variable)');
+    this.getMovies();
   }
 
   ngDoCheck() {
@@ -33,11 +34,12 @@ export class ContinueViewingComponent implements OnChanges, OnInit, DoCheck, OnD
     // console.log('ContinueViewingComponent: OnDestroy');
   }
 
-  deleteInArr(index: number) {
-    console.log(index);
-    this.movies.arrContinueMovies.splice(index, 1);
-    // console.log(this.movies);
+  getMovies() {
+    this.movies = this.continueMovieService.getContinueMovies();
   }
 
-
+  deleteInArr(index: number) {
+    this.continueMovieService.deleteMovie(index);
+    this.getMovies();
+  }
 }

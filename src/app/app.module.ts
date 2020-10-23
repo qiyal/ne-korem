@@ -21,6 +21,11 @@ import { DiscountvaluePipe } from './pipes/discountvalue.pipe';
 import { EditorialComponent } from './editorial/editorial.component';
 import { EditorialCardComponent } from './editorial/editorial-card/editorial-card.component';
 import { CatalogComponent } from './catalog/catalog.component';
+import {MovieService} from './services/movie.service';
+import {ContinueMovieService} from './services/continue-movie.service';
+import {EditorialBoxService} from './services/editorial-box.service';
+import {EditorialListService} from './services/editorial-list.service';
+import {EditorialListCardService} from './services/editorial-list-card.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,13 @@ import { CatalogComponent } from './catalog/catalog.component';
         MatIconModule,
         FormsModule
     ],
-  providers: [],
+  providers: [
+    MovieService,
+    ContinueMovieService,
+    EditorialBoxService,
+    EditorialListService,
+    EditorialListCardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

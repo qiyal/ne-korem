@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EditorialList} from '../../objects/editorial-list';
 import {Movies} from '../../objects/movies';
+import {EditorialListService} from '../../services/editorial-list.service';
 
 @Component({
   selector: 'app-editorials-list',
@@ -8,12 +9,16 @@ import {Movies} from '../../objects/movies';
   styleUrls: ['./editorials-list.component.scss']
 })
 export class EditorialsListComponent implements OnInit {
-  editorialList: Movies;
+  editorialList: EditorialList[];
 
-  constructor() { }
+  constructor(private editorialListService: EditorialListService) { }
 
   ngOnInit(): void {
-    this.editorialList = new Movies();
+    this.getEditorialList();
+  }
+
+  getEditorialList() {
+    this.editorialList = this.editorialListService.getEditorialList();
   }
 
 }
