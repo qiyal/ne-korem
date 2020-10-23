@@ -26,6 +26,7 @@ import {ContinueMovieService} from './services/continue-movie.service';
 import {EditorialBoxService} from './services/editorial-box.service';
 import {EditorialListService} from './services/editorial-list.service';
 import {EditorialListCardService} from './services/editorial-list-card.service';
+import {LoggerService} from './services/logger.service';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import {EditorialListCardService} from './services/editorial-list-card.service';
     ContinueMovieService,
     EditorialBoxService,
     EditorialListService,
-    EditorialListCardService
+    EditorialListCardService,
+    LoggerService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,11 +1,11 @@
 <main>
     <app-continue-viewing></app-continue-viewing>
-    <app-carousel [genre]="'Fantasy'" [movies]="doSpliceMovieService(1, 5)" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
-    <app-carousel [genre]="'New films'" [movies]="doSpliceMovieService(5, 9)" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
+    <app-carousel [genre]="'Fantasy'" [movies]="inputData1" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
+    <app-carousel [genre]="'New films'" [movies]="inputData2" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
 
   <app-editorial-box></app-editorial-box>
 
-    <app-carousel [genre]="'Disney'" [movies]="doSpliceMovieService(9, 13)" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
-    <app-carousel [genre]="'Anime'" [movies]="doSpliceMovieService(10, 15)" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
+    <app-carousel [genre]="'Disney'" [movies]="inputData3" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
+    <app-carousel [genre]="'Anime'" [movies]="inputData4" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
     <app-editorials-list></app-editorials-list>
 </main>

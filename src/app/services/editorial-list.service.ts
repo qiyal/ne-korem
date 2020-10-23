@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import {EditorialList} from '../objects/editorial-list';
+import {LoggerService} from './logger.service';
 
 @Injectable()
 export class EditorialListService {
   private editorialLists: EditorialList[];
 
-  constructor() {
+  constructor(private logger: LoggerService) {
     this.editorialLists = [
       new EditorialList('Marvel', '../../../assets/images/editorial/logo/marvel.png', 20, 500, 'Мстители', '\"../../../assets/images/editorial/edi1.jpeg\"'),
       new EditorialList('Marvel', '../../../assets/images/editorial/logo/marvel.png', 20, 3432, 'Мстители', '\"../../../assets/images/editorial/edi1.jpeg\"'),
@@ -17,6 +18,7 @@ export class EditorialListService {
   }
 
   getEditorialList(): EditorialList[] {
+    this.logger.log('Getting editorial lists.[EditorialListService]');
     return this.editorialLists;
   }
 }

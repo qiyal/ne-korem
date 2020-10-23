@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import {Editorial} from '../objects/editorial';
 import {Movie} from '../objects/movie';
+import {LoggerService} from './logger.service';
 
 @Injectable()
 export class EditorialBoxService {
   private editorials: Editorial[];
 
-  constructor() {
+  constructor(private logger: LoggerService) {
     this.editorials = [
       new Editorial('rgb(33,69,117)', 'linear-gradient(90deg, rgba(33,69,117,1) 0%, rgba(142,51,51,1) 29%, rgba(31,44,73,1) 90%)', new Movie(16, 3000, 6170, '1 h 42 min', '../../assets/images/movies/mmovie1.jpg', '', '', 'The Avengers', 9.3, 2012, 900, 90, '', '')),
       new Editorial('rgb(131,26,26)', 'linear-gradient(90deg, rgba(131,26,26,1) 0%, rgba(116,29,29,1) 29%, rgba(43,58,92,1) 90%)', new Movie(17, 3000, 6170, '1 h 42 min', '../../assets/images/movies/mmovie4.jpg', '', '', 'Avengers: Age of Ultron', 2.2, 2015, 900, 90, '', '')),
@@ -15,7 +16,8 @@ export class EditorialBoxService {
     ];
   }
 
-  getEditorials(): Editorial[] {
+  public getEditorials(): Editorial[] {
+    this.logger.log('Getting editorials box.[EditorialBoxService]');
     return this.editorials;
   }
 }

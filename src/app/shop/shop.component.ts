@@ -9,23 +9,24 @@ import {Movie} from '../objects/movie';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
-  inputChildData: Movie[];
+  inputData1;
+  inputData2;
+  inputData3;
+  inputData4;
   status;
 
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
-    // this.inputChildData = new Movies();
     this.status = 'qwe';
+    this.inputData1 = this.doSpliceMovieService(16, 20);
+    this.inputData2 = this.doSpliceMovieService(20, 24);
+    this.inputData3 = this.doSpliceMovieService(24, 28);
+    this.inputData4 = this.doSpliceMovieService(27, 31);
   }
 
   checkGenreF(str: string) {
     this.status = str;
-    console.log(str);
-  }
-
-  getMovies(): Movie[] {
-    return this.movieService.getMovies();
   }
 
   doSpliceMovieService(start: number, end: number): Movie[] {

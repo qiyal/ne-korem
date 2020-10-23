@@ -10,22 +10,24 @@ import {Movie} from '../objects/movie';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  inputData = new Movies();
+  inputData1;
+  inputData2;
+  inputData3;
+  inputData4;
   status;
 
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
     this.status = 'qwe';
+    this.inputData1 = this.doSpliceMovieService(1, 5);
+    this.inputData2 = this.doSpliceMovieService(5, 9);
+    this.inputData3 = this.doSpliceMovieService(9, 13);
+    this.inputData4 = this.doSpliceMovieService(12, 16);
   }
 
   checkGenreF(str: string) {
     this.status = str;
-    console.log(str);
-  }
-
-  getMovies(): Movie[] {
-    return this.movieService.getMovies();
   }
 
   doSpliceMovieService(start: number, end: number): Movie[] {

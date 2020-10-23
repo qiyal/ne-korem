@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import {LoggerService} from './logger.service';
 
 @Injectable()
 export class EditorialListCardService {
   private editorialListCards = [];
 
-  constructor() {
+  constructor(private logger: LoggerService) {
     this.editorialListCards = [
       {
         name: 'MARVEL',
@@ -46,6 +47,7 @@ export class EditorialListCardService {
   }
 
   getEditorialListCards() {
+    this.logger.log('Getting editorial list cards.[EditorialListCardService]');
     return this.editorialListCards;
   }
 }

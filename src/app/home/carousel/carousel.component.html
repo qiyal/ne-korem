@@ -20,15 +20,15 @@
       </div>
 
       <div class="movie-about-data" *ngIf="aboutClick">
-        <img class="img" src="../../../assets/images/mivoes_logo_png/orig.png" alt="">
+        <img class="img" [src]="lastShowMovie.imgNameSrc" alt="">
         <p [ngStyle]="{'font-size': '16px'}">
           <span [ngStyle]="{'color': setRating(lastShowMovie.rating)}">{{lastShowMovie.rating}}</span>
           <span> {{lastShowMovie.date}},</span>
           <span> боевик, комедия, </span>
           <span>США </span>
-          <span>1 ч 48 мин</span>
+          <span>{{lastShowMovie.timeHour}}</span>
         </p>
-        <p class="movie-title1">Успешное возвращение Гая Ричи к корням — острая и живая криминальная комедия с блестящим актерским составом</p>
+        <p class="movie-title1">{{lastShowMovie.text}}</p>
 
         <div class="btns-box">
           <button class="watch-movie">
@@ -46,12 +46,12 @@
 
       <div class="movie-about-data width-sz" *ngIf="detailsClick">
         <div [ngStyle]="{'width': '642px', 'margin-top': '80px'}">
-          <img class="img change-sz" src="../../../assets/images/mivoes_logo_png/orig.png" alt="">
+          <img class="img change-sz" [src]="lastShowMovie.imgNameSrc" alt="">
           <div>
             <span [ngStyle]="{'color': setRating(lastShowMovie.rating), 'font-size': '18px', 'font-weight': 'bold'}">{{lastShowMovie.rating}}</span>
           </div>
           <div>485219 оценок</div>
-          <p class="movie-title1">Ушлый наркоторговец придумал схему нелегального обогащения — с использованием поместий обедневшей английской аристократии. На успешный бизнес заглядываются партнер-еврей, китайская диаспора, темнокожие спортсмены и русский олигарх.</p>
+          <p class="movie-title1">{{lastShowMovie.text2}}</p>
         </div>
         <div class="players-list">
           <div class="child1">

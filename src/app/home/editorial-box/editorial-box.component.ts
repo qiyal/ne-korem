@@ -20,24 +20,18 @@ export class EditorialBoxComponent implements OnInit {
     this.getEditorials();
     this.k = 0;
     this.total = 0;
-    console.log('Start: ' + this.total);
   }
 
   nextMovie() {
-    console.log('Was: ' + this.total);
     if (this.k < this.movies.length - 1) {
       this.total = 100 * ++this.k;
     }
-    console.log('Become: ' + this.total);
-
   }
 
   prevMovie() {
-    console.log('Was: ' + this.total);
     if (this.k > 0) {
       this.total = 100 * --this.k;
     }
-    console.log('Become: ' + this.total);
   }
 
   getEditorials() {
