@@ -51,4 +51,12 @@ export class MovieService {
     this.logger.log('Doing splice, getting movies start index ' + start + ' and end index ' + end + ' in array movies.[MovieService]');
     return this.movies.slice(start, end);
   }
+
+  getMovieById(id: number): Movie {
+    for (let i = 0; i < this.movies.length; i++) {
+      if (this.movies[i].id === id) {
+        return this.movies[i];
+      }
+    }
+  }
 }

@@ -4,10 +4,10 @@
   </div>
 
   <nav *ngIf="!clickSearch">
-    <a class="nav-link is-active" routerLink="/home" routerLinkActive="active">Home</a>
-    <a class="nav-link" routerLink="/shop" routerLinkActive="active">Shop</a>
-    <a class="nav-link" routerLink="/catalog" routerLinkActive="active">Catalog</a>
-    <a class="nav-link" routerLink="/editorial" routerLinkActive="active">Editorial</a>
+    <a class="nav-link" routerLink="/home" routerLinkActive="is-active">Home</a>
+    <a class="nav-link" routerLink="/shop" routerLinkActive="is-active">Shop</a>
+    <a class="nav-link" routerLink="/editorial" routerLinkActive="is-active">Editorial</a>
+    <a class="nav-link" routerLink="/catalog" routerLinkActive="is-active">Catalog</a>
     <button mat-icon-button aria-label="search btn" class="search-btn" (click)="clickSearch = !clickSearch">
       <mat-icon>search</mat-icon>
     </button>

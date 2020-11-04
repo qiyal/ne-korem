@@ -3,6 +3,14 @@ main {
   background-color: #272d33;
   box-sizing: border-box;
   color: #e5e1dd;
+  min-height: 470px;
+
+  h1 {
+    margin-top: 150px;
+    text-align: center;
+    font-size: 64px;
+    color: #ec7822;
+  }
 
   h2 {
     font-size: 20px;
