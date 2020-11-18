@@ -29,6 +29,9 @@ import {EditorialListCardService} from './services/editorial-list-card.service';
 import {LoggerService} from './services/logger.service';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { ProfileComponent } from './profile/profile.component';
+import {AuthService} from './services/auth.service';
+import {AuthStatusGuard} from './guards/auth-status.guard';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     EditorialCardComponent,
     CatalogComponent,
     MovieDetailsComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    ProfileComponent
   ],
     imports: [
         BrowserModule,
@@ -64,7 +68,9 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     EditorialBoxService,
     EditorialListService,
     EditorialListCardService,
-    LoggerService
+    LoggerService,
+    AuthService,
+    AuthStatusGuard
   ],
   bootstrap: [AppComponent]
 })
