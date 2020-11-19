@@ -15,7 +15,7 @@ import { CarouselCardComponent } from './carousel-card/carousel-card.component';
 import { EditorialBoxComponent } from './home/editorial-box/editorial-box.component';
 import { EditorialsListComponent } from './home/editorials-list/editorials-list.component';
 import { ConverternumberPipe } from './pipes/converternumber.pipe';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ShopComponent } from './shop/shop.component';
 import { DiscountvaluePipe } from './pipes/discountvalue.pipe';
 import { EditorialComponent } from './editorial/editorial.component';
@@ -37,6 +37,10 @@ import { LoginComponent } from './login/login.component';
 import {UserService} from "./services/user.service";
 import {NavbarService} from "./services/navbar.service";
 import {NavBarGuard} from "./guards/nav-bar.guard";
+import { ProfileContinueMoviesComponent } from './profile/profile-continue-movies/profile-continue-movies.component';
+import { ProfileFavoriteMoviesComponent } from './profile/profile-favorite-movies/profile-favorite-movies.component';
+import {LoginPageGuard} from './guards/login-page.guard';
+import {ProfilePageChildCompAccessGuard} from './guards/profile-page-child-comp-access.guard';
 
 @NgModule({
   declarations: [
@@ -59,16 +63,19 @@ import {NavBarGuard} from "./guards/nav-bar.guard";
     MovieDetailsComponent,
     ErrorPageComponent,
     ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileContinueMoviesComponent,
+    ProfileFavoriteMoviesComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatIconModule,
-        FormsModule,
-        MatChipsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    FormsModule,
+    MatChipsModule,
+    ReactiveFormsModule
+  ],
   providers: [
     MovieService,
     ContinueMovieService,
@@ -80,7 +87,9 @@ import {NavBarGuard} from "./guards/nav-bar.guard";
     UserService,
     NavbarService,
     AuthStatusGuard,
-    NavBarGuard
+    NavBarGuard,
+    LoginPageGuard,
+    ProfilePageChildCompAccessGuard
   ],
   bootstrap: [AppComponent]
 })

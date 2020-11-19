@@ -3,11 +3,12 @@
     <div class="profile-flex-box">
 
       <div class="profile-title-box">
+
         <div class="profile-image">
           <img src="../../assets/images/avatars/Kiba.jpg" alt="profile image">
         </div>
-        <p>Yerbolat Pazyl</p>
-        <p>@snicos</p>
+        <p>{{user.firstName + ' ' + user.lastName}}</p>
+        <p>@{{user.login}}</p>
         <div class="profile-subs-flex">
           <div class="child l">
             <strong>26</strong>
@@ -18,15 +19,18 @@
             text text
           </div>
         </div>
+        <div class="action-log-out">
+          <button (click)="logOutUser()">Log out</button>
+        </div>
       </div>
 
       <div class="profile-basic-info">
 
         <div class="profile-nav-bar">
           <mat-chip-list>
-            <mat-chip>Continue watching</mat-chip>
+            <mat-chip routerLink="./" routerLinkActive="active">Continue watching</mat-chip>
             <mat-chip>My movies</mat-chip>
-            <mat-chip>My favorite movies</mat-chip>
+            <mat-chip routerLink="./my-favorite-movies" routerLinkActive="active">My favorite movies</mat-chip>
             <mat-chip>My Editorials</mat-chip>
           </mat-chip-list>
         </div>

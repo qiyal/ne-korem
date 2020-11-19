@@ -10,16 +10,16 @@ main {
   overflow: hidden;
 }
 
-.wrapper {
-
+.active {
+  background-color: #53468c!important;
 }
 
 .profile-flex-box {
   display: flex;
   justify-content: space-between;
+  align-items: start;
   margin: 50px 72px;
   box-sizing: border-box;
-  border: 1px solid red;
 }
 
 .profile-title-box {
@@ -31,7 +31,7 @@ main {
   text-align: center;
 
   .profile-image {
-    margin: auto;
+    margin: 0 auto 30px;
     width: 150px;
     height: 150px;
 
@@ -53,10 +53,9 @@ main {
 .profile-basic-info {
   width: 68%;
   box-sizing: border-box;
-  border: 1px solid blue;
 
   .profile-nav-bar {
-    background-color: #fff;
+    background-color: #ec7822;
     padding: 10px 0;
     display: flex;
     justify-content: center;
@@ -68,17 +67,23 @@ main {
   }
 
   .profile-info-box {
-    border: 1px solid yellow;
-    .profile-cards-container {
-      display: flex;
-      flex-wrap: wrap;
-      box-sizing: border-box;
-      justify-content: space-between;
-
-      app-card {
-        width: 30%;
-      }
-    }
+    box-sizing: border-box;
   }
 }
 
+.action-log-out {
+  button {
+    border: none;
+    padding: 7px;
+    background-color: #ec7822;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transform-origin: center;
+    transition: all 100ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

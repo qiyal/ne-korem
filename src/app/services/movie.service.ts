@@ -59,4 +59,14 @@ export class MovieService {
       }
     }
   }
+
+  getMoviesById(moviesId: number[]): Movie[] {
+    let movies: Movie[] = [];
+
+    for (let id of moviesId) {
+      movies.push(this.getMovieById(id));
+    }
+
+    return movies;
+  }
 }

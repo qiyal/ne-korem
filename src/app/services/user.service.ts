@@ -4,11 +4,10 @@ import {User} from '../objects/user';
 @Injectable()
 export class UserService {
   private users: User[] = [];
-  private authUser: User;
 
   constructor() {
     this.users = [
-      new User(26244, 'nicos', '12345', 'nico@gmail.com', 'Yerbolat', 'Pazyl', [],[], [], [])
+      new User(26244, 'nicos', '12345', 'nico@gmail.com', 'Yerbolat', 'Pazyl', [1, 2, 3, 4], [], [7, 8, 9, 10, 11, 12, 13], [])
     ];
   }
 
@@ -16,15 +15,19 @@ export class UserService {
     for (let i = 0; i < this.users.length; ++i) {
       const user: User = this.users[i];
       if (user.login === login && user.password === password) {
-        this.authUser = user;
         return true;
       }
     }
     return false;
   }
 
-  getAuthUser(): User {
-    return this.authUser;
+  getUserByLogin(login: string): User {
+    for (let user of this.users) {
+      if (user.login === login) {
+        return user;
+      }
+    }
+    return null;
   }
 
   getUserById(userId: number): User {

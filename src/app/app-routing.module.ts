@@ -10,6 +10,10 @@ import {ProfileComponent} from './profile/profile.component';
 import {AuthStatusGuard} from './guards/auth-status.guard';
 import {LoginComponent} from "./login/login.component";
 import {NavBarGuard} from "./guards/nav-bar.guard";
+import {ProfileContinueMoviesComponent} from './profile/profile-continue-movies/profile-continue-movies.component';
+import {ProfileFavoriteMoviesComponent} from './profile/profile-favorite-movies/profile-favorite-movies.component';
+import {LoginPageGuard} from './guards/login-page.guard';
+import {ProfilePageChildCompAccessGuard} from './guards/profile-page-child-comp-access.guard';
 
 
 const routes: Routes = [
@@ -21,9 +25,25 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [AuthStatusGuard]
+    canActivate: [AuthStatusGuard],
+    canActivateChild: [ProfilePageChildCompAccessGuard],
+    children: [
+      {
+        path: '',
+        component: ProfileContinueMoviesComponent,
+      },
+      {
+        path: 'my-favorite-movies',
+        component: ProfileFavoriteMoviesComponent
+      }
+    ]
   },
-  { path: 'login', component: LoginComponent, canDeactivate: [NavBarGuard] },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [LoginPageGuard],
+    canDeactivate: [NavBarGuard]
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: ErrorPageComponent}
 ];
