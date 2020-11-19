@@ -32,6 +32,11 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { ProfileComponent } from './profile/profile.component';
 import {AuthService} from './services/auth.service';
 import {AuthStatusGuard} from './guards/auth-status.guard';
+import {MatChipsModule} from "@angular/material/chips";
+import { LoginComponent } from './login/login.component';
+import {UserService} from "./services/user.service";
+import {NavbarService} from "./services/navbar.service";
+import {NavBarGuard} from "./guards/nav-bar.guard";
 
 @NgModule({
   declarations: [
@@ -53,14 +58,16 @@ import {AuthStatusGuard} from './guards/auth-status.guard';
     CatalogComponent,
     MovieDetailsComponent,
     ErrorPageComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         MatIconModule,
-        FormsModule
+        FormsModule,
+        MatChipsModule
     ],
   providers: [
     MovieService,
@@ -70,7 +77,10 @@ import {AuthStatusGuard} from './guards/auth-status.guard';
     EditorialListCardService,
     LoggerService,
     AuthService,
-    AuthStatusGuard
+    UserService,
+    NavbarService,
+    AuthStatusGuard,
+    NavBarGuard
   ],
   bootstrap: [AppComponent]
 })

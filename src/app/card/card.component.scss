@@ -1,5 +1,5 @@
 .card-cv {
-  margin-right: 30px;
+  //margin-right: 30px;
 }
 
 .content:hover {
@@ -15,8 +15,8 @@
 }
 
 .content {
-  width: 337px;
-  height: 190px;
+  max-width: 337px;
+  //min-height: 190px;
   border-radius: 12px;
   box-sizing: border-box;
   overflow: hidden;

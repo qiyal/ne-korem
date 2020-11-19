@@ -2,12 +2,11 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthService {
-  auth = true;
+  auth = false;
 
   constructor() { }
 
   isAuth() {
-    console.log("Auth: " + this.auth);
     return this.auth;
   }
 

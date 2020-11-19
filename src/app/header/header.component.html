@@ -21,13 +21,13 @@
   </form>
 
   <div class="actions">
-      <a *ngIf="authService.isAuth()" class="nav-profile-link" routerLink="/profile">
+      <a *ngIf="isAuth()" class="nav-profile-link" routerLink="/profile">
         <img src="../../assets/images/avatars/avatar1.png" alt="profile avatar image">
       </a>
   </div>
 
-  <div *ngIf="!authService.isAuth()" class="actions-v2">
-    <a href="#">Sign in</a>
-    <a href="#">Sign up</a>
+  <div *ngIf="!isAuth() && navbarService.visible" class="actions-v2">
+    <a routerLink="/login">Log in</a>
+    <a href="/sign-up">Sign up</a>
   </div>
 </header>

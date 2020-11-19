@@ -6,4 +6,7 @@
 
 .movies {
   display: flex;
+  app-card {
+    margin-right: 30px;
+  }
 }

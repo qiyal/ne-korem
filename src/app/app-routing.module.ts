@@ -8,6 +8,8 @@ import {MovieDetailsComponent} from './movie-details/movie-details.component';
 import {ErrorPageComponent} from './error-page/error-page.component';
 import {ProfileComponent} from './profile/profile.component';
 import {AuthStatusGuard} from './guards/auth-status.guard';
+import {LoginComponent} from "./login/login.component";
+import {NavBarGuard} from "./guards/nav-bar.guard";
 
 
 const routes: Routes = [
@@ -21,6 +23,7 @@ const routes: Routes = [
     component: ProfileComponent,
     canActivate: [AuthStatusGuard]
   },
+  { path: 'login', component: LoginComponent, canDeactivate: [NavBarGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: ErrorPageComponent}
 ];

@@ -33,6 +33,18 @@ nav {
 .actions-v2 {
   position: absolute;
   right: 72px;
+  a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ec7822;
+    transform-origin: center;
+    transition: all 200ms ease-in-out;
+
+    &:hover {
+      color: #ff6600;
+      font-weight: bold;
+    }
+  }
 }
 
 .nav-link {
