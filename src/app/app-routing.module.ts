@@ -14,6 +14,7 @@ import {ProfileContinueMoviesComponent} from './profile/profile-continue-movies/
 import {ProfileFavoriteMoviesComponent} from './profile/profile-favorite-movies/profile-favorite-movies.component';
 import {LoginPageGuard} from './guards/login-page.guard';
 import {ProfilePageChildCompAccessGuard} from './guards/profile-page-child-comp-access.guard';
+import {SignUpComponent} from './sign-up/sign-up.component';
 
 
 const routes: Routes = [
@@ -41,6 +42,12 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [LoginPageGuard],
+    canDeactivate: [NavBarGuard]
+  },
+  {
+    path: 'sign-up',
+    component: SignUpComponent,
     canActivate: [LoginPageGuard],
     canDeactivate: [NavBarGuard]
   },

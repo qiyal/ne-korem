@@ -41,6 +41,8 @@ import { ProfileContinueMoviesComponent } from './profile/profile-continue-movie
 import { ProfileFavoriteMoviesComponent } from './profile/profile-favorite-movies/profile-favorite-movies.component';
 import {LoginPageGuard} from './guards/login-page.guard';
 import {ProfilePageChildCompAccessGuard} from './guards/profile-page-child-comp-access.guard';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,8 @@ import {ProfilePageChildCompAccessGuard} from './guards/profile-page-child-comp-
     ProfileComponent,
     LoginComponent,
     ProfileContinueMoviesComponent,
-    ProfileFavoriteMoviesComponent
+    ProfileFavoriteMoviesComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +77,8 @@ import {ProfilePageChildCompAccessGuard} from './guards/profile-page-child-comp-
     MatIconModule,
     FormsModule,
     MatChipsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     MovieService,

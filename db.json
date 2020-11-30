@@ -1,4 +1,18 @@
 {
+  "users": [
+    {
+      "id": 0,
+      "login": "nicos",
+      "password": "12345",
+      "email": "nicos@gmail.com",
+      "firstName": "Yerbolat",
+      "lastName": "Pazyl",
+      "continueMovies": [1, 2, 3, 4],
+      "myMovies": [],
+      "favoriteMovie": [7, 8, 9, 10, 11, 12, 13],
+      "myEditorials": []
+    }
+  ],
   "movies": [
     {
       "id": 1,
@@ -25,7 +39,7 @@
       "imgBigSrc": "../../assets/images/movie_details/movie10.webp",
       "imgNameSrc": "../../assets/images/mivoes_logo_png/m2.png",
       "name": "A Dog's Purpose 2",
-      "rating": 8.0,
+      "rating": 8,
       "date": 2019,
       "price": 599,
       "discount": 100,

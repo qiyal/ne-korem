@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NavbarService} from "../services/navbar.service";
+import {NavbarService} from '../services/navbar.service';
 import {FormControl, FormGroup} from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import {Router} from '@angular/router';
@@ -15,19 +15,33 @@ export class LoginComponent implements OnInit {
     login: new FormControl(''),
     password: new FormControl('')
   });
+  response: any;
 
-  constructor(public navbarService: NavbarService, private authService: AuthService, private router: Router) {}
+  constructor(
+    public navbarService: NavbarService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.navbarService.hide();
-    console.log("valid: " + this.validUser);
+    this.response = null;
   }
 
   submit() {
-    this.validUser = this.authService.doAuth(this.loginForm.getRawValue());
+    this.loginForm.disable();
 
-    if (this.validUser) {
-      this.router.navigate(['/profile']);
-    }
+    this.authService.login(this.loginForm.getRawValue()).subscribe(res => {
+      this.response = res;
+
+      if (this.response.length) {
+        this.validUser = true;
+        this.authService.setAuthUserLogin(this.response[0].login);
+        this.router.navigate(['/profile']);
+      } else {
+        this.loginForm.enable();
+        this.validUser = false;
+      }
+    });
   }
 }

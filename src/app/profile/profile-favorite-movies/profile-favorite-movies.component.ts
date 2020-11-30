@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MovieService} from '../../services/movie.service';
 import {Movie} from '../../objects/movie';
 import {UserService} from '../../services/user.service';
+import {User} from '../../objects/user';
 
 @Component({
   selector: 'app-profile-favorite-movies',
@@ -18,9 +19,13 @@ export class ProfileFavoriteMoviesComponent implements OnInit {
 
   getMovies() {
     let login = localStorage.getItem('userLogin');
-    let user = this.userService.getUserByLogin(login);
+    let user: User;
+
+    this.userService.getUserByLogin(login).subscribe(data => {
+      user = data;
+    });
+
     this.movies = this.movieService.getMoviesById(user.favoriteMovie);
-    console.log(this.movies);
   }
 
 }
