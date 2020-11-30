@@ -17,7 +17,7 @@ export class AuthService {
   ) {
     this.auth = false;
     this.apiUser = 'http://localhost:3000/users';
-    if(localStorage.getItem('userLogin')) {
+    if (localStorage.getItem('userLogin')) {
       this._authUserLogin = localStorage.getItem('userLogin');
     }
   }
