@@ -7,7 +7,20 @@
       "email": "nicos@gmail.com",
       "firstName": "Yerbolat",
       "lastName": "Pazyl",
-      "continueMovies": [1, 2, 3, 4],
+      "continueMovies": [
+        {
+          "movieId": 1,
+          "watchTime": 80
+        },
+        {
+          "movieId": 2,
+          "watchTime": 60
+        },
+        {
+          "movieId": 5,
+          "watchTime": 60
+        }
+      ],
       "myMovies": [],
       "favoriteMovie": [7, 8, 9, 10, 11, 12, 13],
       "myEditorials": []
@@ -16,8 +29,7 @@
   "movies": [
     {
       "id": 1,
-      "time": 1000,
-      "totalTime": 3000,
+      "totalTime": 132,
       "timeHour": "2 h 12 min",
       "imgSrc": "../../assets/images/movies/movie7.webp",
       "imgBigSrc": "../../assets/images/movie_details/movie9.webp",
@@ -32,8 +44,7 @@
     },
     {
       "id": 2,
-      "time": 1000,
-      "totalTime": 3000,
+      "totalTime": 108,
       "timeHour": "1 h 48 min",
       "imgSrc": "../../assets/images/movies/movie9.webp",
       "imgBigSrc": "../../assets/images/movie_details/movie10.webp",
@@ -48,7 +59,6 @@
     },
     {
       "id": 3,
-      "time": 2430,
       "totalTime": 3000,
       "timeHour": "",
       "imgSrc": "../../assets/images/movies/movie2.webp",
@@ -64,8 +74,7 @@
     },
     {
       "id": 4,
-      "time": 1000,
-      "totalTime": 3000,
+      "totalTime": 1000,
       "timeHour": "",
       "imgSrc": "../../assets/images/movies/movie1.webp",
       "imgBigSrc": "../../assets/images/movie_details/movie2.webp",
@@ -80,7 +89,6 @@
     },
     {
       "id": 5,
-      "time": 1000,
       "totalTime": 3000,
       "timeHour": "1 h 30 min",
       "imgSrc": "../../assets/images/movies/movie3.webp",
@@ -96,7 +104,6 @@
     },
     {
       "id": 6,
-      "time": 1000,
       "totalTime": 3000,
       "timeHour": "2 h 32 min",
       "imgSrc": "../../assets/images/movies/movie4.webp",
@@ -112,7 +119,6 @@
     },
     {
       "id": 7,
-      "time": 1000,
       "totalTime": 3000,
       "timeHour": "2 h 10 min",
       "imgSrc": "../../assets/images/movies/movie5.webp",
@@ -128,7 +134,6 @@
     },
     {
       "id": 8,
-      "time": 1000,
       "totalTime": 3000,
       "timeHour": "2 h 1 min",
       "imgSrc": "../../assets/images/movies/movie6.webp",
@@ -144,7 +149,6 @@
     },
     {
       "id": 9,
-      "time": 1000,
       "totalTime": 3000,
       "timeHour": "1 h 33 min",
       "imgSrc": "../../assets/images/movies/movie8.webp",
@@ -160,7 +164,6 @@
     },
     {
       "id": 10,
-      "time": 1000,
       "totalTime": 3000,
       "timeHour": "1 h 59 min",
       "imgSrc": "../../assets/images/movies/movie10.webp",
@@ -176,7 +179,6 @@
     },
     {
       "id": 11,
-      "time": 1000,
       "totalTime": 3000,
       "timeHour": "1 h 42 min",
       "imgSrc": "../../assets/images/movies/movie11.webp",
@@ -192,7 +194,6 @@
     },
     {
       "id": 12,
-      "time": 1000,
       "totalTime": 3000,
       "timeHour": "1 h 48 min",
       "imgSrc": "../../assets/images/movies/movie12.webp",
@@ -208,7 +209,6 @@
     },
     {
       "id": 13,
-      "time": 1000,
       "totalTime": 6170,
       "timeHour": "2 h 4 min",
       "imgSrc": "../../assets/images/movies/movie13.webp",
@@ -224,7 +224,6 @@
     },
     {
       "id": 14,
-      "time": 1000,
       "totalTime": 6170,
       "timeHour": "",
       "imgSrc": "../../assets/images/movies/movie14.webp",
@@ -240,7 +239,6 @@
     },
     {
       "id": 15,
-      "time": 1000,
       "totalTime": 6170,
       "timeHour": "",
       "imgSrc": "../../assets/images/movies/movie15.webp",
@@ -256,7 +254,6 @@
     },
     {
       "id": 16,
-      "time": 1000,
       "totalTime": 6170,
       "timeHour": "2 h 4 min",
       "imgSrc": "../../assets/images/movies/movie16.webp",
@@ -272,7 +269,6 @@
     },
     {
       "id": 17,
-      "time": 1000,
       "totalTime": 6170,
       "timeHour": "2 h 7 min",
       "imgSrc": "../../assets/images/movies/movie17.webp",
@@ -288,7 +284,6 @@
     },
     {
       "id": 18,
-      "time": 1000,
       "totalTime": 6170,
       "timeHour": "1 h 57 min",
       "imgSrc": "../../assets/images/movies/movie18.webp",
@@ -304,7 +299,6 @@
     },
     {
       "id": 19,
-      "time": 1000,
       "totalTime": 6170,
       "timeHour": "1 h 54 min",
       "imgSrc": "../../assets/images/movies/movie19.webp",
@@ -320,7 +314,6 @@
     },
     {
       "id": 20,
-      "time": 1000,
       "totalTime": 6170,
       "timeHour": "",
       "imgSrc": "../../assets/images/movies/movie20.webp",
@@ -336,7 +329,6 @@
     },
     {
       "id": 21,
-      "time": 1000,
       "totalTime": 6170,
       "timeHour": "1 h 59 min",
       "imgSrc": "../../assets/images/movies/movie21.webp",

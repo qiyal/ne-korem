@@ -24,22 +24,22 @@ export class MovieDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.movieId = +this.route.snapshot.paramMap.get('id');
-    this.movie = this.getMovie();
+    // this.movie = this.getMovie();
     this.status = 'qwe';
-    this.inputData1 = this.doSpliceMovieService(1, 5);
-    this.inputData2 = this.doSpliceMovieService(5, 9);
+    // this.inputData1 = this.doSpliceMovieService(1, 5);
+    // this.inputData2 = this.doSpliceMovieService(5, 9);
   }
 
   checkGenreF(str: string) {
     this.status = str;
   }
 
-  doSpliceMovieService(start: number, end: number): Movie[] {
-    return this.movieService.doSliceMoviesArr(start, end);
-  }
+  // doSpliceMovieService(start: number, end: number): Movie[] {
+  //   // return this.movieService.doSliceMoviesArr(start, end);
+  // }
 
   getMovie() {
-    return this.movieService.getMovieById(this.movieId);
+    // return this.movieService.getMovieById(this.movieId);
   }
 
   setRating(rating: number): string {

@@ -9,8 +9,7 @@ import {Movie} from '../objects/movie';
 export class CardComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
   @Output() deleteMoviesInHistoryWatching = new EventEmitter<number>();
   @Input() movie: Movie;
-  @Input() movieIndex: number;
-
+  @Input() watchTime: number;
   percent: string;
 
   constructor() { }
@@ -25,7 +24,7 @@ export class CardComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.percent = Math.floor(this.movie.time * 100 / this.movie.totalTime) + '%';
+    this.percent = Math.floor(this.watchTime * 100 / this.movie.totalTime) + '%';
     // console.log('CardComponent: OnInit(set percent variable)');
   }
 
@@ -38,8 +37,7 @@ export class CardComponent implements OnChanges, OnInit, DoCheck, OnDestroy {
   }
 
   deleteMovieInHistory() {
-    // console.log("index dlete: " + this.movieIndex);
-    this.deleteMoviesInHistoryWatching.emit(this.movieIndex);
+    this.deleteMoviesInHistoryWatching.emit(this.movie.id);
   }
 
 }

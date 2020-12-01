@@ -22,8 +22,4 @@ export class UserService {
   createUser(user): Observable<User> {
     return this._http.post<User>(this.api + `/users`, user);
   }
-
-  getContinueMovies() {
-
-  }
 }

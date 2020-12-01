@@ -25,7 +25,7 @@ export class ProfileFavoriteMoviesComponent implements OnInit {
       user = data;
     });
 
-    this.movies = this.movieService.getMoviesById(user.favoriteMovie);
+    // this.movies = this.movieService.getMoviesById(user.favoriteMovie);
   }
 
 }

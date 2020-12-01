@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
 export class AuthService {
   auth: boolean;
   private _authUserLogin: string;
-  apiUser: string;
+  apiUser = 'http://localhost:3000/users';
 
   constructor(
     private userService: UserService,
@@ -16,7 +16,6 @@ export class AuthService {
     private _http: HttpClient
   ) {
     this.auth = false;
-    this.apiUser = 'http://localhost:3000/users';
     if (localStorage.getItem('userLogin')) {
       this._authUserLogin = localStorage.getItem('userLogin');
     }

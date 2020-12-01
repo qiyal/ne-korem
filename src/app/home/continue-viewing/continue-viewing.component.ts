@@ -1,6 +1,5 @@
 import {Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import {Movie} from '../../objects/movie';
-import {Movies} from '../../objects/movies';
 import {ContinueMovieService} from '../../services/continue-movie.service';
 
 @Component({
@@ -35,7 +34,7 @@ export class ContinueViewingComponent implements OnChanges, OnInit, DoCheck, OnD
   }
 
   getMovies() {
-    this.movies = this.continueMovieService.getContinueMovies();
+    // this.movies = this.continueMovieService.getContinueMovies();
   }
 
   deleteInArr(index: number) {

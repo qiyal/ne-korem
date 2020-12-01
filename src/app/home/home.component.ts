@@ -1,6 +1,5 @@
 import {Component, OnInit, QueryList, ViewChildren, AfterViewInit, ViewChild} from '@angular/core';
 import {CarouselComponent} from './carousel/carousel.component';
-import {Movies} from '../objects/movies';
 import {MovieService} from '../services/movie.service';
 import {Movie} from '../objects/movie';
 
@@ -20,18 +19,18 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.status = 'qwe';
-    this.inputData1 = this.doSpliceMovieService(1, 5);
-    this.inputData2 = this.doSpliceMovieService(5, 9);
-    this.inputData3 = this.doSpliceMovieService(9, 13);
-    this.inputData4 = this.doSpliceMovieService(12, 16);
+    // this.inputData1 = this.doSpliceMovieService(1, 5);
+    // this.inputData2 = this.doSpliceMovieService(5, 9);
+    // this.inputData3 = this.doSpliceMovieService(9, 13);
+    // this.inputData4 = this.doSpliceMovieService(12, 16);
   }
 
   checkGenreF(str: string) {
     this.status = str;
   }
 
-  doSpliceMovieService(start: number, end: number): Movie[] {
-    return this.movieService.doSliceMoviesArr(start, end);
-  }
+  // doSpliceMovieService(start: number, end: number): Movie[] {
+  //   return this.movieService.doSliceMoviesArr(start, end);
+  // }
 
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Movies} from '../objects/movies';
 import {EditorialListCardService} from '../services/editorial-list-card.service';
 
 @Component({

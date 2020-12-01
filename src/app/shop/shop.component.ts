@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Movies} from '../objects/movies';
 import {MovieService} from '../services/movie.service';
 import {Movie} from '../objects/movie';
 
@@ -19,18 +18,18 @@ export class ShopComponent implements OnInit {
 
   ngOnInit(): void {
     this.status = 'qwe';
-    this.inputData1 = this.doSpliceMovieService(16, 20);
-    this.inputData2 = this.doSpliceMovieService(20, 24);
-    this.inputData3 = this.doSpliceMovieService(24, 28);
-    this.inputData4 = this.doSpliceMovieService(27, 31);
+    // this.inputData1 = this.doSpliceMovieService(16, 20);
+    // this.inputData2 = this.doSpliceMovieService(20, 24);
+    // this.inputData3 = this.doSpliceMovieService(24, 28);
+    // this.inputData4 = this.doSpliceMovieService(27, 31);
   }
 
   checkGenreF(str: string) {
     this.status = str;
   }
 
-  doSpliceMovieService(start: number, end: number): Movie[] {
-    return this.movieService.doSliceMoviesArr(start, end);
-  }
+  // doSpliceMovieService(start: number, end: number): Movie[] {
+  //   return this.movieService.doSliceMoviesArr(start, end);
+  // }
 
 }

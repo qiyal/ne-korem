@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import {Movie} from '../objects/movie';
 import {LoggerService} from './logger.service';
-import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {AuthService} from './auth.service';
+import {UserService} from './user.service';
+import {Observable} from 'rxjs';
+import {User} from '../objects/user';
 
 @Injectable()
 export class ContinueMovieService {
@@ -12,16 +13,12 @@ export class ContinueMovieService {
   constructor(
     private http: HttpClient,
     private authService: AuthService,
+    private userService: UserService,
     private logger: LoggerService
   ) {}
 
-  public getContinueMovies(): Observable<Movie[]> {
-    this.logger.log('Getting continue movies.[ContinueMovieService]');
-    return this.http.get<Movie[]>(this.api + `login=${this.authService.authUserLogin}`);
-  }
-
-  public deleteMovie(index: number) {
-    this.logger.log('Removing continue movie with index ' + index + ' in continueMovies array.[ContinueMovieService]');
-    this.continueMovies.splice(index, 1);
+  public deleteMovie(movieId: number): Observable<User> {
+    this.logger.log('Removing continue movie with id ' + movieId + ' in continueMovies array.[ContinueMovieService]');
+    this.http.delete(this.api + `/users?login=${this.authService.authUserLogin}&continueMovies_like=`)
   }
 }
