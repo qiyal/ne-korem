@@ -18,8 +18,12 @@ export class ContinueMovieService {
     private logger: LoggerService
   ) {}
 
-  public deleteMovie(id: number): Observable<ContinueMovies[]> {
-    this.logger.log('Removing continue movie with id ' + id + ' in continueMovies array.[ContinueMovieService]');
-    return this.http.delete<ContinueMovies[]>(this.api + `/continueMovies/${id}`);
+  public getContinueMovies(id: number): Observable<ContinueMovies[]> {
+    return this.http.get<ContinueMovies[]>(this.api + `/users/${id}/continueMovies`);
+  }
+
+  public deleteMovie(id: number): Observable<any> {
+    console.log("GET ID: " + id);
+    return this.http.delete<any>(this.api + `/continueMovies/${id}`);
   }
 }

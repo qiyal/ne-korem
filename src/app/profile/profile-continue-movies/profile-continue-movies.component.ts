@@ -13,8 +13,7 @@ import {User} from '../../objects/user';
   styleUrls: ['./profile-continue-movies.component.scss']
 })
 export class ProfileContinueMoviesComponent implements OnInit {
-  continueMovies: Movie[] = [];
-  movieWatchTimes: ContinueMovies[] = [];
+  continueMovies: ContinueMovies[] = [];
 
   constructor(
     private continueMovieService: ContinueMovieService,
@@ -28,26 +27,35 @@ export class ProfileContinueMoviesComponent implements OnInit {
   }
 
   getContinueMovies() {
-    this.userService.getUserByLoginWithContinueMovies(this.authService.authUserLogin).subscribe(user => {
-      let continueMovies: ContinueMovies[] = user[0].continueMovies;
-      let request = '';
+    // this.userService.getUserByLoginWithContinueMovies(this.authService.authUserLogin).subscribe(user => {
+    //   let continueMovies: ContinueMovies[] = user[0].continueMovies;
+    //   let request = '';
+    //
+    //   for (let i = 0; i < continueMovies.length; i++) {
+    //     if (i < continueMovies.length - 1) {
+    //       request += `id=${continueMovies[i].movieId}&`;
+    //     } else {
+    //       request += `id=${continueMovies[i].movieId}`;
+    //     }
+    //     this.movieWatchTimes.push(continueMovies[i]);
+    //   }
+    //
+    //   console.log(continueMovies);
+    //
+    //   if (request !== '') {
+    //     this.movieService.getMoviesById(request).subscribe(res => {
+    //       this.continueMovies = res;
+    //       console.log(this.continueMovies);
+    //     });
+    //   }
+    // });
 
-      for (let i = 0; i < continueMovies.length; i++) {
-        if (i < continueMovies.length - 1) {
-          request += `id=${continueMovies[i].movieId}&`;
-        } else {
-          request += `id=${continueMovies[i].movieId}`;
-        }
-        this.movieWatchTimes.push(continueMovies[i]);
-      }
-
-      console.log(continueMovies);
-
-      if (request !== '') {
-        this.movieService.getMoviesById(request).subscribe(res => {
-          this.continueMovies = res;
-        });
-      }
+    this.userService.getUserByLogin(this.authService.authUserLogin).subscribe(resUser => {
+      let user: User = resUser[0];
+      console.log(user);
+      this.continueMovieService.getContinueMovies(user.id).subscribe(res2 => {
+        this.continueMovies = res2;
+      });
     });
   }
 

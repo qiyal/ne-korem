@@ -18,31 +18,42 @@
         13
       ],
       "myEditorials": []
+    },
+    {
+      "login": "nico",
+      "password": "123",
+      "email": "",
+      "firstName": "Thor",
+      "lastName": "Tom",
+      "myMovies": [],
+      "favoriteMovie": [],
+      "myEditorials": [],
+      "id": 2
     }
   ],
   "continueMovies": [
     {
       "id": 1,
-      "userId": 2,
+      "userId": 1,
       "movieId": 1,
       "watchTime": 60
     },
     {
       "id": 2,
       "userId": 1,
-      "movieId": 1,
+      "movieId": 2,
       "watchTime": 60
     },
     {
       "id": 3,
       "userId": 1,
-      "movieId": 2,
+      "movieId": 5,
       "watchTime": 60
     },
     {
       "id": 4,
       "userId": 1,
-      "movieId": 5,
+      "movieId": 6,
       "watchTime": 60
     }
   ],
@@ -109,7 +120,7 @@
     },
     {
       "id": 5,
-      "totalTime": 3000,
+      "totalTime": 90,
       "timeHour": "1 h 30 min",
       "imgSrc": "../../assets/images/movies/movie3.webp",
       "imgBigSrc": "../../assets/images/movie_details/movie4.webp",
@@ -124,7 +135,7 @@
     },
     {
       "id": 6,
-      "totalTime": 3000,
+      "totalTime": 152,
       "timeHour": "2 h 32 min",
       "imgSrc": "../../assets/images/movies/movie4.webp",
       "imgBigSrc": "../../assets/images/movie_details/movie3.webp",

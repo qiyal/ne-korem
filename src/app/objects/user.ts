@@ -11,6 +11,5 @@ export class User {
     public myMovies: number[],
     public favoriteMovie: number[],
     public myEditorials: number[],
-    public continueMovies: ContinueMovies[],
   ) {}
 }
