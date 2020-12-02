@@ -5,6 +5,7 @@ import {MovieService} from '../../services/movie.service';
 import {UserService} from '../../services/user.service';
 import {AuthService} from '../../services/auth.service';
 import {ContinueMovies} from '../../objects/continue-movies';
+import {User} from '../../objects/user';
 
 @Component({
   selector: 'app-profile-continue-movies',
@@ -13,7 +14,7 @@ import {ContinueMovies} from '../../objects/continue-movies';
 })
 export class ProfileContinueMoviesComponent implements OnInit {
   continueMovies: Movie[] = [];
-  movieWatchTimes: number[] = [];
+  movieWatchTimes: ContinueMovies[] = [];
 
   constructor(
     private continueMovieService: ContinueMovieService,
@@ -27,8 +28,8 @@ export class ProfileContinueMoviesComponent implements OnInit {
   }
 
   getContinueMovies() {
-    this.userService.getUserByLogin(this.authService.authUserLogin).subscribe(user => {
-      const continueMovies: ContinueMovies[] = user[0].continueMovies;
+    this.userService.getUserByLoginWithContinueMovies(this.authService.authUserLogin).subscribe(user => {
+      let continueMovies: ContinueMovies[] = user[0].continueMovies;
       let request = '';
 
       for (let i = 0; i < continueMovies.length; i++) {
@@ -37,17 +38,23 @@ export class ProfileContinueMoviesComponent implements OnInit {
         } else {
           request += `id=${continueMovies[i].movieId}`;
         }
-        this.movieWatchTimes.push(continueMovies[i].watchTime);
+        this.movieWatchTimes.push(continueMovies[i]);
       }
 
-      this.movieService.getMoviesById(request).subscribe(res => {
-        this.continueMovies = res;
-      });
+      console.log(continueMovies);
+
+      if (request !== '') {
+        this.movieService.getMoviesById(request).subscribe(res => {
+          this.continueMovies = res;
+        });
+      }
     });
   }
 
-  deleteMovieInContinueMovies(movieId: number) {
-    this.continueMovieService.deleteMovie()
+  deleteMovieInContinueMovies(id: number) {
+    this.continueMovieService.deleteMovie(id).subscribe(() => {
+      this.getContinueMovies();
+    });
   }
 
 }

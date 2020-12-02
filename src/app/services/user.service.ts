@@ -15,6 +15,10 @@ export class UserService {
     return this._http.get<User>(this.api + `/users?login=${login}`);
   }
 
+  getUserByLoginWithContinueMovies(login: string): Observable<User> {
+    return this._http.get<User>(this.api + `/users?login=${login}&_embed=continueMovies`);
+  }
+
   hasLogin(login: string): Observable<any> {
     return this._http.get<Response>(this.api + `/users?login=${login}`);
   }

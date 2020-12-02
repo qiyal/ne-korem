@@ -5,6 +5,7 @@ import {AuthService} from './auth.service';
 import {UserService} from './user.service';
 import {Observable} from 'rxjs';
 import {User} from '../objects/user';
+import {ContinueMovies} from '../objects/continue-movies';
 
 @Injectable()
 export class ContinueMovieService {
@@ -17,8 +18,8 @@ export class ContinueMovieService {
     private logger: LoggerService
   ) {}
 
-  public deleteMovie(movieId: number): Observable<User> {
-    this.logger.log('Removing continue movie with id ' + movieId + ' in continueMovies array.[ContinueMovieService]');
-    this.http.delete(this.api + `/users?login=${this.authService.authUserLogin}&continueMovies_like=`)
+  public deleteMovie(id: number): Observable<ContinueMovies[]> {
+    this.logger.log('Removing continue movie with id ' + id + ' in continueMovies array.[ContinueMovieService]');
+    return this.http.delete<ContinueMovies[]>(this.api + `/continueMovies/${id}`);
   }
 }

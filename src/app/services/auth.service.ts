@@ -21,7 +21,6 @@ export class AuthService {
     }
   }
 
-
   get authUserLogin(): string {
     return this._authUserLogin;
   }

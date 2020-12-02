@@ -38,7 +38,7 @@ export class ContinueViewingComponent implements OnChanges, OnInit, DoCheck, OnD
   }
 
   deleteInArr(index: number) {
-    this.continueMovieService.deleteMovie(index);
+    // this.continueMovieService.deleteMovie(index);
     this.getMovies();
   }
 }
