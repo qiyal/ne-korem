@@ -8,10 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './core/components/home/home.component';
 import { ContinueViewingComponent } from './core/components/home/continue-viewing/continue-viewing.component';
-import { CardComponent } from './shared/card/card.component';
+import { CardComponent } from './shared/cards/card/card.component';
 import {MatIconModule} from '@angular/material/icon';
 import { CarouselComponent } from './core/components/home/carousel/carousel.component';
-import { CarouselCardComponent } from './shared/carousel-card/carousel-card.component';
+import { CarouselCardComponent } from './shared/cards/carousel-card/carousel-card.component';
 import { EditorialBoxComponent } from './core/components/home/editorial-box/editorial-box.component';
 import { EditorialsListComponent } from './core/components/home/editorials-list/editorials-list.component';
 import { ConverternumberPipe } from './core/pipes/converternumber.pipe';
@@ -19,7 +19,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ShopComponent } from './core/components/shop/shop.component';
 import { DiscountvaluePipe } from './core/pipes/discountvalue.pipe';
 import { EditorialComponent } from './core/components/editorial/editorial.component';
-import { EditorialCardComponent } from './core/components/editorial/editorial-card/editorial-card.component';
+import { EditorialCardComponent } from './shared/cards/editorial-card/editorial-card.component';
 import { CatalogComponent } from './core/components/catalog/catalog.component';
 import {MovieService} from './core/services/movie.service';
 import {ContinueMovieService} from './core/services/continue-movie.service';
@@ -45,6 +45,7 @@ import { SignUpComponent } from './core/components/sign-up/sign-up.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ProfileMyMoviesComponent } from './core/components/profile/profile-my-movies/profile-my-movies.component';
 import { FirstCharToUppercasePipe } from './core/pipes/first-char-to-uppercase.pipe';
+import { EditorialsListCardComponent } from './shared/cards/editorials-list-card/editorials-list-card.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { FirstCharToUppercasePipe } from './core/pipes/first-char-to-uppercase.p
     SignUpComponent,
     ProfileMyMoviesComponent,
     FirstCharToUppercasePipe,
+    EditorialsListCardComponent,
   ],
   imports: [
     BrowserModule,

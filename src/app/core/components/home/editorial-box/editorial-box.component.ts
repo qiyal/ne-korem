@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Movie} from '../../../objects/movie';
-import {Editorial} from '../../../objects/editorial';
 import {EditorialBoxService} from '../../../services/editorial-box.service';
 
 @Component({
@@ -11,7 +10,7 @@ import {EditorialBoxService} from '../../../services/editorial-box.service';
 export class EditorialBoxComponent implements OnInit {
   k: number;
   total: number;
-  movies: Editorial[];
+  // movies: Editorial[];
 
   constructor(private editorialBoxService: EditorialBoxService) { }
 
@@ -21,11 +20,11 @@ export class EditorialBoxComponent implements OnInit {
     this.total = 0;
   }
 
-  nextMovie() {
-    if (this.k < this.movies.length - 1) {
-      this.total = 100 * ++this.k;
-    }
-  }
+  // nextMovie() {
+  //   if (this.k < this.movies.length - 1) {
+  //     this.total = 100 * ++this.k;
+  //   }
+  // }
 
   prevMovie() {
     if (this.k > 0) {
@@ -34,7 +33,7 @@ export class EditorialBoxComponent implements OnInit {
   }
 
   getEditorials() {
-    this.movies = this.editorialBoxService.getEditorials();
+    // this.movies = this.editorialBoxService.getEditorials();
   }
 
 }

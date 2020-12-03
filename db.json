@@ -7,6 +7,7 @@
       "email": "nicos@gmail.com",
       "firstName": "Yerbolat",
       "lastName": "Pazyl",
+      "photoUrl": "../../../assets/images/avatars/Kiba.jpg",
       "myMovies": [
         18,
         19,
@@ -22,7 +23,7 @@
         12,
         13
       ],
-      "myEditorials": []
+      "subscribeEditorials": []
     },
     {
       "id": 2,
@@ -31,6 +32,7 @@
       "email": "",
       "firstName": "Thor",
       "lastName": "Tom",
+      "photoUrl": "../../../assets/images/avatars/Kiba.jpg",
       "myMovies": [
         18,
         19,
@@ -38,7 +40,7 @@
         21
       ],
       "favoriteMovie": [],
-      "myEditorials": []
+      "subscribeEditorials": []
     }
   ],
   "continueMovies": [
@@ -403,6 +405,22 @@
       "genres": ["drama"],
       "text": "Военная драма Сэма Мендеса, снятая почти без монтажа. Три «Оскара», в том числе за работу оператора",
       "text2": "1917 год, разгар Первой мировой войны. Двум юным солдатам поручают смертельно опасную миссию. Они должны пересечь вражескую территорию и доставить секретное сообщение, которое предотвратит неминуемую гибель сотен солдат… Смогут ли они выиграть гонку со временем?"
+    }
+  ],
+  "editorials": [
+    {
+      "id":1,
+      "userId": 1,
+      "photoUrl": "../../../assets/images/editorial/edi1.jpeg",
+      "title": "Editor - 1",
+      "movieIds": [1, 2, 5],
+      "subscriber": 0,
+      "texts": [
+        "text - 1",
+        "text - 2",
+        "text - 3"
+      ],
+      "price": 0
     }
   ]
 }

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Movie} from '../../core/objects/movie';
+import {Movie} from '../../../core/objects/movie';
 
 @Component({
   selector: 'app-carousel-card',

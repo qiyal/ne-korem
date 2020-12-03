@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EditorialListCardService} from '../../services/editorial-list-card.service';
+import {Editorial} from '../../objects/editorial';
+import {EditorialListService} from '../../services/editorial-list.service';
 
 @Component({
   selector: 'app-editorial',
@@ -7,16 +9,20 @@ import {EditorialListCardService} from '../../services/editorial-list-card.servi
   styleUrls: ['./editorial.component.scss']
 })
 export class EditorialComponent implements OnInit {
-  editorialListCards = [];
+  editorialListCards: Editorial[] = [];
 
-  constructor(private editorialListCardService: EditorialListCardService) { }
+  constructor(
+    private editorialListService: EditorialListService
+  ) { }
 
   ngOnInit(): void {
     this.getEditorialListCards();
   }
 
   getEditorialListCards() {
-    this.editorialListCards = this.editorialListCardService.getEditorialListCards();
+   this.editorialListService.get6EditorialLastAdd().subscribe(res => {
+     this.editorialListCards = res;
+   });
   }
 
 }

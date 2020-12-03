@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {EditorialList} from '../../../objects/editorial-list';
 import {EditorialListService} from '../../../services/editorial-list.service';
+import {Editorial} from '../../../objects/editorial';
 
 @Component({
   selector: 'app-editorials-list',
@@ -8,7 +8,7 @@ import {EditorialListService} from '../../../services/editorial-list.service';
   styleUrls: ['./editorials-list.component.scss']
 })
 export class EditorialsListComponent implements OnInit {
-  editorialList: EditorialList[];
+  editorialList: Editorial[];
 
   constructor(private editorialListService: EditorialListService) { }
 
@@ -17,7 +17,9 @@ export class EditorialsListComponent implements OnInit {
   }
 
   getEditorialList() {
-    this.editorialList = this.editorialListService.getEditorialList();
+    this.editorialListService.get6EditorialLastAdd().subscribe(res => {
+      this.editorialList = res;
+    });
   }
 
 }

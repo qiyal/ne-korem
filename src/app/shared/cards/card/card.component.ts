@@ -1,7 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter, OnChanges, OnDestroy, SimpleChanges, DoCheck} from '@angular/core';
-import {Movie} from '../../core/objects/movie';
-import {ContinueMovies} from '../../core/objects/continue-movies';
-import {MovieService} from '../../core/services/movie.service';
+import {Movie} from '../../../core/objects/movie';
+import {ContinueMovies} from '../../../core/objects/continue-movies';
+import {MovieService} from '../../../core/services/movie.service';
 
 @Component({
   selector: 'app-card',

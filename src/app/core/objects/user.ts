@@ -8,8 +8,9 @@ export class User {
     public email: string,
     public firstName: string,
     public lastName: string,
+    public photoUrl: string,
     public myMovies: number[],
     public favoriteMovie: number[],
-    public myEditorials: number[],
+    public subscribeEditorials: number[],
   ) {}
 }
