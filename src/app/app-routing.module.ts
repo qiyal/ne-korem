@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {ShopComponent} from './shop/shop.component';
-import {EditorialComponent} from './editorial/editorial.component';
-import {CatalogComponent} from './catalog/catalog.component';
-import {MovieDetailsComponent} from './movie-details/movie-details.component';
-import {ErrorPageComponent} from './error-page/error-page.component';
-import {ProfileComponent} from './profile/profile.component';
-import {AuthStatusGuard} from './guards/auth-status.guard';
-import {LoginComponent} from './login/login.component';
-import {NavBarGuard} from './guards/nav-bar.guard';
-import {ProfileContinueMoviesComponent} from './profile/profile-continue-movies/profile-continue-movies.component';
-import {ProfileFavoriteMoviesComponent} from './profile/profile-favorite-movies/profile-favorite-movies.component';
-import {LoginPageGuard} from './guards/login-page.guard';
-import {ProfilePageChildCompAccessGuard} from './guards/profile-page-child-comp-access.guard';
-import {SignUpComponent} from './sign-up/sign-up.component';
+import {HomeComponent} from './core/components/home/home.component';
+import {ShopComponent} from './core/components/shop/shop.component';
+import {EditorialComponent} from './core/components/editorial/editorial.component';
+import {CatalogComponent} from './core/components/catalog/catalog.component';
+import {MovieDetailsComponent} from './shared/movie-details/movie-details.component';
+import {ErrorPageComponent} from './shared/error-page/error-page.component';
+import {ProfileComponent} from './core/components/profile/profile.component';
+import {AuthStatusGuard} from './core/guards/auth-status.guard';
+import {LoginComponent} from './core/components/login/login.component';
+import {NavBarGuard} from './core/guards/nav-bar.guard';
+import {ProfileContinueMoviesComponent} from './core/components/profile/profile-continue-movies/profile-continue-movies.component';
+import {ProfileFavoriteMoviesComponent} from './core/components/profile/profile-favorite-movies/profile-favorite-movies.component';
+import {LoginPageGuard} from './core/guards/login-page.guard';
+import {ProfilePageChildCompAccessGuard} from './core/guards/profile-page-child-comp-access.guard';
+import {SignUpComponent} from './core/components/sign-up/sign-up.component';
+import {ProfileMyMoviesComponent} from './core/components/profile/profile-my-movies/profile-my-movies.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
       {
         path: '',
         component: ProfileContinueMoviesComponent,
+      },
+      {
+        path: 'my-movies',
+        component: ProfileMyMoviesComponent
       },
       {
         path: 'my-favorite-movies',

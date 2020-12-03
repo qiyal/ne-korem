@@ -1,0 +1,11 @@
+<main>
+    <app-continue-viewing></app-continue-viewing>
+    <app-carousel [genre]="genres[0]" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
+    <app-carousel [genre]="genres[1]" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
+
+  <app-editorial-box></app-editorial-box>
+
+    <app-carousel [genre]="genres[2]" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
+    <app-carousel [genre]="genres[3]" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
+    <app-editorials-list></app-editorials-list>
+</main>
