@@ -18,7 +18,7 @@ export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
     }
   }
   private _checkGenre;
-  movies: Movie[];
+  @Input() movies: Movie[];
   @Output() getGenre = new EventEmitter<string>();
 
   lastShowMovie: Movie;
@@ -30,17 +30,10 @@ export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
     private movieService: MovieService
   ) { }
 
-  ngOnChanges(changes: SimpleChanges) {
-    // for (const propName in changes) {
-    //   const chng = changes[propName];
-    //   const cur  = JSON.stringify(chng.currentValue);
-    //   const prev = JSON.stringify(chng.previousValue);
-    //   console.log(`CarouselComponent: ${propName}: currentValue = ${cur}, previousValue = ${prev}`);
-    // }
-  }
+  ngOnChanges(changes: SimpleChanges) {}
 
   ngOnInit(): void {
-    this.getMovies();
+    // this.getMovies();
     this.lastShowMovie = null;
     this.showMovieDetail = false;
   }
@@ -48,11 +41,11 @@ export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
   ngOnDestroy() {
   }
 
-  getMovies() {
-    this.movieService.get10MoviesByGenre(this.genre).subscribe(res => {
-      this.movies = res;
-    });
-  }
+  // getMovies() {
+  //   this.movieService.get10MoviesByGenre(this.genre).subscribe(res => {
+  //     this.movies = res;
+  //   });
+  // }
 
   onClickMovieCarouselCard(movie: Movie) {
     if (movie !== this.lastShowMovie) {

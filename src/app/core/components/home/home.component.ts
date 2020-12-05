@@ -11,23 +11,49 @@ import {Movie} from '../../objects/movie';
 export class HomeComponent implements OnInit {
   genres = ['adventure', 'anime', 'comedy', 'drama'];
   status;
+  inputData1: Movie[] = [];
+  inputData2: Movie[] = [];
+  inputData3: Movie[] = [];
+  inputData4: Movie[] = [];
 
-  constructor(private movieService: MovieService) { }
+  constructor(
+    private movieService: MovieService
+  ) { }
 
   ngOnInit(): void {
     this.status = 'qwe';
-    // this.inputData1 = this.doSpliceMovieService(1, 5);
-    // this.inputData2 = this.doSpliceMovieService(5, 9);
-    // this.inputData3 = this.doSpliceMovieService(9, 13);
-    // this.inputData4 = this.doSpliceMovieService(12, 16);
+    this.getInputData1();
+    this.getInputData2();
+    this.getInputData3();
+    this.getInputData4();
   }
 
   checkGenreF(str: string) {
     this.status = str;
   }
 
-  // doSpliceMovieService(start: number, end: number): Movie[] {
-  //   return this.movieService.doSliceMoviesArr(start, end);
-  // }
+  getInputData1() {
+    this.movieService.get10MoviesByGenre(this.genres[0]).subscribe(res => {
+      this.inputData1 = res;
+    });
+  }
+
+  getInputData2() {
+    this.movieService.get10MoviesByGenre(this.genres[1]).subscribe(res => {
+      this.inputData2 = res;
+    });
+  }
+
+  getInputData3() {
+    this.movieService.get10MoviesByGenre(this.genres[2]).subscribe(res => {
+      this.inputData3 = res;
+    });
+  }
+
+  getInputData4() {
+    this.movieService.get10MoviesByGenre(this.genres[3]).subscribe(res => {
+      this.inputData4 = res;
+    });
+  }
 
 }

@@ -13,8 +13,8 @@ export class MovieDetailsComponent implements OnInit {
   movieId: number;
   aboutClick = true;
   detailsClick = false;
-  inputData1;
-  inputData2;
+  inputData1: Movie[] = [];
+  inputData2: Movie[] = [];
   status;
 
   constructor(
@@ -24,22 +24,32 @@ export class MovieDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.movieId = +this.route.snapshot.paramMap.get('id');
-    // this.movie = this.getMovie();
+    this.getMovie();
+    this.getInputData1();
+    this.getInputData2();
     this.status = 'qwe';
-    // this.inputData1 = this.doSpliceMovieService(1, 5);
-    // this.inputData2 = this.doSpliceMovieService(5, 9);
   }
 
   checkGenreF(str: string) {
     this.status = str;
   }
 
-  // doSpliceMovieService(start: number, end: number): Movie[] {
-  //   // return this.movieService.doSliceMoviesArr(start, end);
-  // }
-
   getMovie() {
-    // return this.movieService.getMovieById(this.movieId);
+    this.movieService.getMovieById(this.movieId).subscribe(res => {
+      this.movie = res;
+    });
+  }
+
+  getInputData1() {
+    this.movieService.get10MoviesByGenre('comedy').subscribe(res => {
+      this.inputData1 = res;
+    });
+  }
+
+  getInputData2() {
+    this.movieService.get10MoviesByGenre('anime').subscribe(res => {
+      this.inputData2 = res;
+    });
   }
 
   setRating(rating: number): string {

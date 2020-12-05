@@ -46,6 +46,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { ProfileMyMoviesComponent } from './core/components/profile/profile-my-movies/profile-my-movies.component';
 import { FirstCharToUppercasePipe } from './core/pipes/first-char-to-uppercase.pipe';
 import { EditorialsListCardComponent } from './shared/cards/editorials-list-card/editorials-list-card.component';
+import { MoviesComponent } from './shared/movies/movies.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { EditorialsListCardComponent } from './shared/cards/editorials-list-card
     ProfileMyMoviesComponent,
     FirstCharToUppercasePipe,
     EditorialsListCardComponent,
+    MoviesComponent,
   ],
   imports: [
     BrowserModule,

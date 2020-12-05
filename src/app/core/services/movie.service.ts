@@ -26,4 +26,8 @@ export class MovieService {
     return this.http.get<Movie[]>(this.api + `/movies?genres_like=${genre}&_limit=10&discount_gte=100`);
   }
 
+  get10MoviesByGenreForShop(genre: string): Observable<Movie[]> {
+    return this.http.get<Movie[]>(this.api + `/movies?genres_like=${genre}&_limit=10&discount_ne=100`);
+  }
+
 }

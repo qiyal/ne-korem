@@ -43,6 +43,7 @@
       "subscribeEditorials": []
     }
   ],
+
   "continueMovies": [
     {
       "id": 1,
@@ -69,6 +70,7 @@
       "watchTime": 60
     }
   ],
+
   "movies": [
     {
       "id": 1,
@@ -94,7 +96,7 @@
       "imgBigSrc": "../../assets/images/movie_details/movie10.webp",
       "imgNameSrc": "../../assets/images/mivoes_logo_png/m2.png",
       "name": "A Dog's Purpose 2",
-      "rating": 8,
+      "rating": 8.1,
       "date": 2019,
       "price": 599,
       "discount": 100,
@@ -407,6 +409,7 @@
       "text2": "1917 год, разгар Первой мировой войны. Двум юным солдатам поручают смертельно опасную миссию. Они должны пересечь вражескую территорию и доставить секретное сообщение, которое предотвратит неминуемую гибель сотен солдат… Смогут ли они выиграть гонку со временем?"
     }
   ],
+
   "editorials": [
     {
       "id":1,
@@ -421,6 +424,21 @@
         "text - 3"
       ],
       "price": 0
+    },
+    {
+      "id":2,
+      "userId": 1,
+      "photoUrl": "../../../assets/images/editorial/StudioGhibli.jpg",
+      "title": "Editor - 2",
+      "movieIds": [1, 2, 5, 4],
+      "subscriber": 2,
+      "texts": [
+        "text - 1",
+        "text - 2",
+        "text - 3",
+        "text - 4"
+      ],
+      "price": 2990
     }
   ]
 }

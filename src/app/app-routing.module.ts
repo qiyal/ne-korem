@@ -16,11 +16,13 @@ import {LoginPageGuard} from './core/guards/login-page.guard';
 import {ProfilePageChildCompAccessGuard} from './core/guards/profile-page-child-comp-access.guard';
 import {SignUpComponent} from './core/components/sign-up/sign-up.component';
 import {ProfileMyMoviesComponent} from './core/components/profile/profile-my-movies/profile-my-movies.component';
+import {MoviesComponent} from './shared/movies/movies.component';
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'movie/:id', component: MovieDetailsComponent },
+  { path: 'selection/:genre', component: MoviesComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'editorial', component: EditorialComponent },
   { path: 'catalog', component: CatalogComponent },
