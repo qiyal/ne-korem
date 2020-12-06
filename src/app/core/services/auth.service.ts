@@ -9,6 +9,7 @@ export class AuthService {
   auth: boolean;
   private _authUserLogin: string;
   apiUser = 'http://localhost:3000/users';
+  userAvatarUrl: string;
 
   constructor(
     private userService: UserService,
@@ -19,6 +20,7 @@ export class AuthService {
     if (localStorage.getItem('userLogin')) {
       this._authUserLogin = localStorage.getItem('userLogin');
     }
+    this.setAvatarUrl();
   }
 
   get authUserLogin(): string {
@@ -42,12 +44,20 @@ export class AuthService {
   logOut() {
     localStorage.removeItem('userLogin');
     this.auth = false;
+    this._authUserLogin = '';
+    this.userAvatarUrl = '';
     this.router.navigate(['/login']);
   }
 
   setAuthUserLogin(login) {
     localStorage.setItem('userLogin', login);
     this._authUserLogin = login;
+  }
+
+  setAvatarUrl() {
+    this.userService.getUserByLogin(localStorage.getItem('userLogin')).subscribe(res => {
+      this.userAvatarUrl = res[0].photoUrl;
+    });
   }
 
 }

@@ -1,5 +1,4 @@
-import {Component, OnInit, QueryList, ViewChildren, AfterViewInit, ViewChild} from '@angular/core';
-import {CarouselComponent} from './carousel/carousel.component';
+import {Component, OnInit} from '@angular/core';
 import {MovieService} from '../../services/movie.service';
 import {Movie} from '../../objects/movie';
 
@@ -15,6 +14,7 @@ export class HomeComponent implements OnInit {
   inputData2: Movie[] = [];
   inputData3: Movie[] = [];
   inputData4: Movie[] = [];
+  bannerId = 1;
 
   constructor(
     private movieService: MovieService

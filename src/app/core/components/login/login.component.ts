@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
       if (this.response.length) {
         this.validUser = true;
         this.authService.setAuthUserLogin(this.response[0].login);
+        this.authService.userAvatarUrl = res[0].photoUrl;
         this.router.navigate(['/profile']);
       } else {
         this.loginForm.enable();

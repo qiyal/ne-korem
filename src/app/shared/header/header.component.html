@@ -22,7 +22,7 @@
 
   <div class="actions">
       <a *ngIf="isAuth()" class="nav-profile-link" routerLink="/profile">
-        <img src="../../../assets/images/avatars/Kiba.jpg" alt="profile avatar image">
+        <img [src]="getAvatar()" alt="profile avatar image">
       </a>
   </div>
 

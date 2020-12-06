@@ -47,6 +47,7 @@ import { ProfileMyMoviesComponent } from './core/components/profile/profile-my-m
 import { FirstCharToUppercasePipe } from './core/pipes/first-char-to-uppercase.pipe';
 import { EditorialsListCardComponent } from './shared/cards/editorials-list-card/editorials-list-card.component';
 import { MoviesComponent } from './shared/movies/movies.component';
+import { EditorialDetailsComponent } from './core/components/editorial/editorial-details/editorial-details.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { MoviesComponent } from './shared/movies/movies.component';
     FirstCharToUppercasePipe,
     EditorialsListCardComponent,
     MoviesComponent,
+    EditorialDetailsComponent,
   ],
   imports: [
     BrowserModule,

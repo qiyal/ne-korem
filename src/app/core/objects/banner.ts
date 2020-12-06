@@ -2,9 +2,10 @@ import {Movie} from './movie';
 
 export class Banner {
   constructor(
-    public fon: string,
-    public gradient: string,
-    public movie: Movie
+    public id: number,
+    public movieIds: number[],
+    public colors: string[],
+    public line: string[]
   ) {
   }
 }

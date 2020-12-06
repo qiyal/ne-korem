@@ -5,7 +5,7 @@
       <div class="profile-title-box">
 
         <div class="profile-image">
-          <img src="../../../../assets/images/avatars/Kiba.jpg" alt="profile image">
+          <img [src]="user.photoUrl" alt="profile image">
         </div>
         <p>{{user.firstName}} {{user.lastName}}</p>
         <p>@{{user.login}}</p>

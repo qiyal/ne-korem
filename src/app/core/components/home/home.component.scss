@@ -3,11 +3,12 @@ main {
   background-color: #272d33;
   box-sizing: border-box;
   color: #e5e1dd;
+  overflow: hidden;
+
   h2 {
     font-size: 20px;
     line-height: 16px;
   }
-  overflow: hidden;
 }
 
 .padding {

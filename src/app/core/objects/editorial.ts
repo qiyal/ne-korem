@@ -4,8 +4,9 @@ export class Editorial {
     public userId: number,
     public photoUrl: string,
     public title: string,
-    public movieIds: [],
-    public subscriber: number,
+    public movieIds: number[],
+    public subscriber: number[],
+    public text: string,
     public texts: string[],
     public price: number
   ) {}
