@@ -61,7 +61,6 @@ main {
         .btn-dev {
           bottom: 10%;
           position: absolute;
-          padding: 17px 20px;
           border: none;
           border-radius: 3px;
           color: #fff;
@@ -72,7 +71,20 @@ main {
           cursor: pointer;
         }
 
+        .btn-edit {
+          background-color: transparent;
+          border: 2px solid rgba(3,3, 3, .6);
+          padding: 20px 25px;
+          color: #222;
+
+          &:hover {
+            color: #fff;
+            background-color: rgba(0, 0, 0, .5);
+          }
+        }
+
         .btn-sub {
+          padding: 17px 20px;
           background-color: #48d27c;
 
           &:hover {
@@ -81,6 +93,7 @@ main {
         }
 
         .btn-un {
+          padding: 17px 20px;
           background-color: #d23033;
 
           &:hover {

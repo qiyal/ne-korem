@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Editorial} from '../../../objects/editorial';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {EditorialListService} from '../../../services/editorial-list.service';
 import {UserService} from '../../../services/user.service';
 import {User} from '../../../objects/user';
@@ -26,7 +26,8 @@ export class EditorialDetailsComponent implements OnInit {
     private editorialListService: EditorialListService,
     private userService: UserService,
     private movieService: MovieService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -105,5 +106,9 @@ export class EditorialDetailsComponent implements OnInit {
     this.editorialListService.updateOnlySubs(this.editor).subscribe(res => {
       this.getEditor();
     });
+  }
+
+  navigateToEdit() {
+    this.router.navigate([`/editorial/${this.editorId}/edit`]);
   }
 }

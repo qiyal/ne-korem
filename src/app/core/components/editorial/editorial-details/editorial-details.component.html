@@ -16,7 +16,7 @@
 
         <button class="btn-dev btn-sub" *ngIf="canDo()" (click)="doSubs()">Subscribe</button>
         <button class="btn-dev btn-un" *ngIf="!canDo() && user.login !== getAuthLogin()" (click)="doUnSubs()">Unsubscribe</button>
-
+        <button class="btn-dev btn-edit" *ngIf="user.login === getAuthLogin()" (click)="navigateToEdit()">Edit</button>
       </div>
     </div>
 

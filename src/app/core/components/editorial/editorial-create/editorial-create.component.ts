@@ -58,6 +58,7 @@ export class EditorialCreateComponent implements OnInit {
       subscriber: this.fb.array([
         // this.fb.control(-1),
       ]),
+      text: [''],
       texts: this.fb.array([
         // this.fb.control(-1, Validators.required),
       ]),
@@ -107,11 +108,19 @@ export class EditorialCreateComponent implements OnInit {
     this.subscriber.push(new FormControl(-1, [Validators.required]));
   }
 
-  deleteMovie(index: number) {
-    this.movieIds.push(new FormControl(-1, [Validators.required]));
+  deleteMovie() {
+    this.movieIds.removeAt(this.movieIds.length - 1);
+    this.texts.removeAt(this.texts.length - 1);
+  }
+
+  addMovie() {
+    this.addMovieIds();
+    this.addTexts();
   }
 
   save() {
-    console.log(this.formEditor.value)
+    this.editorialListService.updateEditor(this.formEditor.getRawValue()).subscribe(() => {
+      this.router.navigate(['/editorial', this.editorId]);
+    });
   }
 }

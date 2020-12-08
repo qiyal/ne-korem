@@ -32,4 +32,8 @@ export class EditorialListService {
   getSubscriberEditors(userId: number): Observable<Editorial[]> {
     return this.http.get<Editorial[]>(this.api + `/editorials?subscriber_like=${userId}`);
   }
+
+  updateEditor(editor: Editorial): Observable<Editorial> {
+    return this.http.put<Editorial>(this.api + `/editorials/${editor.id}`, editor);
+  }
 }
