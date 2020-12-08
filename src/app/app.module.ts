@@ -50,6 +50,8 @@ import { MoviesComponent } from './shared/movies/movies.component';
 import { EditorialDetailsComponent } from './core/components/editorial/editorial-details/editorial-details.component';
 import { ProfileMyEditorialsComponent } from './core/components/profile/profile-my-editorials/profile-my-editorials.component';
 import { AppendStringsPipe } from './core/pipes/append-strings.pipe';
+import { PayDialogComponent } from './shared/dialogs/pay-dialog/pay-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -83,6 +85,7 @@ import { AppendStringsPipe } from './core/pipes/append-strings.pipe';
     EditorialDetailsComponent,
     ProfileMyEditorialsComponent,
     AppendStringsPipe,
+    PayDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,7 +95,8 @@ import { AppendStringsPipe } from './core/pipes/append-strings.pipe';
     FormsModule,
     MatChipsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [
     MovieService,

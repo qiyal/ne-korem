@@ -4,6 +4,8 @@ import {MovieService} from '../../../services/movie.service';
 import {UserService} from '../../../services/user.service';
 import {AuthService} from '../../../services/auth.service';
 import {User} from '../../../objects/user';
+import {MatDialog} from '@angular/material/dialog';
+import {PayDialogComponent} from '../../../../shared/dialogs/pay-dialog/pay-dialog.component';
 
 @Component({
   selector: 'app-carousel',
@@ -33,7 +35,8 @@ export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
   constructor(
     private movieService: MovieService,
     private userService: UserService,
-    private authService: AuthService
+    private authService: AuthService,
+    private dialog: MatDialog
   ) { }
 
   ngOnChanges(changes: SimpleChanges) {}
@@ -117,6 +120,30 @@ export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
         }
         user.favoriteMovie = newArr;
         this.userService.updateUser(user).subscribe();
+      }
+    });
+  }
+
+  doPay(movie: Movie) {
+    this.openDialog(movie);
+  }
+
+  openDialog(payMovie: Movie) {
+    const dialogRef = this.dialog.open(PayDialogComponent, {
+      data: { movie: payMovie, login: this.authService.authUserLogin }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+
+      if (result) {
+        this.userService.getUserByLogin(this.authService.authUserLogin).subscribe(res => {
+          let user: User = res[0];
+
+          user.myMovies.push(payMovie.id);
+
+          this.userService.updateUser(user).subscribe();
+        });
       }
     });
   }

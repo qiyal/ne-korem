@@ -1,6 +1,6 @@
 <div class="carousel">
 
-  <div class="movie-genre" [routerLink]="['/selection', genre]">
+  <div class="movie-genre" [routerLink]="['/selection/genre', genre]">
     <h2>{{genre | firstCharToUppercase}}</h2>
   </div>
 
@@ -30,9 +30,13 @@
         <p class="movie-title1">{{lastShowMovie.text}}</p>
 
         <div class="btns-box">
-          <button class="watch-movie">
+          <button class="watch-movie" *ngIf="lastShowMovie.discount === 100" [routerLink]="['/selection/movie', lastShowMovie.id]">
             <mat-icon>play_arrow</mat-icon>
-            <span>Смотреть</span>
+            <span>Watch</span>
+          </button>
+          <button class="watch-movie" *ngIf="lastShowMovie.discount !== 100" (click)="doPay(lastShowMovie)">
+            <mat-icon>payments</mat-icon>
+            <span>Pay</span>
           </button>
           <button class="action-btns" (click)="addToFa(lastShowMovie.id)">
             <mat-icon *ngIf="!clickAdd">bookmark</mat-icon>

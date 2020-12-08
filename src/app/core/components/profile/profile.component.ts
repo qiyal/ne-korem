@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import { User } from '../../objects/user';
 import {UserService} from '../../services/user.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -18,7 +19,6 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser();
-    this.user = null;
   }
 
   logOutUser() {

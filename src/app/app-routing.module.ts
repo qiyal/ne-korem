@@ -23,12 +23,25 @@ import {ProfileMyEditorialsComponent} from './core/components/profile/profile-my
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'movie/:id', component: MovieDetailsComponent },
-  { path: 'selection/:genre', component: MoviesComponent },
+  { path: 'selection/movie/:id', component: MovieDetailsComponent },
+  { path: 'selection/genre/:genre', component: MoviesComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'editorial', component: EditorialComponent },
   { path: 'editorial/:id', component: EditorialDetailsComponent },
   { path: 'catalog', component: CatalogComponent },
+  // {
+  //   path: 'selection',
+  //   children: [
+  //     {
+  //       path: 'movie/:id',
+  //       component: MovieDetailsComponent
+  //     },
+  //     {
+  //       path: 'genre/:type',
+  //       component: MoviesComponent
+  //     }
+  //   ]
+  // },
   {
     path: 'profile',
     component: ProfileComponent,
