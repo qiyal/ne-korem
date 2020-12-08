@@ -560,8 +560,6 @@
   ],
   "editorials": [
     {
-      "0": 2,
-      "1": 3,
       "id": 1,
       "userId": 1,
       "photoUrl": "../../../assets/images/editorial/edi1.jpeg",
@@ -593,9 +591,7 @@
         5,
         4
       ],
-      "subscriber": [
-        2
-      ],
+      "subscriber": [],
       "texts": [
         "text - 1",
         "text - 2",
