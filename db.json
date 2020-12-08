@@ -21,7 +21,8 @@
         10,
         11,
         12,
-        13
+        13,
+        20
       ],
       "subscribeEditorials": []
     },
@@ -593,14 +594,16 @@
         18,
         19
       ],
-      "subscriber": [],
+      "subscriber": [
+        2
+      ],
       "texts": [
         "text - 1",
         "text - 2",
         "text - 3",
         "text - 4"
       ],
-      "price": 2990
+      "price": 0
     },
     {
       "id": 3,
@@ -610,11 +613,13 @@
       "movieIds": [
         20
       ],
-      "subscriber": [],
+      "subscriber": [
+        2
+      ],
       "texts": [
         "text - 1"
       ],
-      "price": 2990
+      "price": 0
     }
   ],
   "banners": [

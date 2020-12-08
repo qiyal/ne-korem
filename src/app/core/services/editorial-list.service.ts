@@ -28,4 +28,8 @@ export class EditorialListService {
   updateOnlySubs(obj: Editorial): Observable<Editorial> {
     return this.http.put<Editorial>(this.api + `/editorials/${obj.id}`, obj);
   }
+
+  getSubscriberEditors(userId: number): Observable<Editorial[]> {
+    return this.http.get<Editorial[]>(this.api + `/editorials?subscriber_like=${userId}`);
+  }
 }

@@ -35,6 +35,10 @@ export class EditorialDetailsComponent implements OnInit {
     this.getAuthUser();
   }
 
+  getAuthLogin() {
+    return this.authService.authUserLogin;
+  }
+
   getEditor() {
     this.editorialListService.getEditorialById(this.editorId).subscribe(res => {
       this.editor = res;

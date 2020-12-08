@@ -4,7 +4,7 @@
   </button>
   <div class="flex">
 
-      <div class="movie" *ngFor="let movie of movies; let i = index" [ngStyle]="{'transform': 'translateX(-' + total + '%)', 'background-color': banner.colors[i], 'background': banner.line[i]}">
+      <div class="movie" [routerLink]="['/movie', movie.id]" *ngFor="let movie of movies; let i = index" [ngStyle]="{'transform': 'translateX(-' + total + '%)', 'background-color': banner.colors[i], 'background': banner.line[i]}">
         <div class="img">
           <img [src]="movie.img3" [alt]="movie.name + 'image'">
         </div>

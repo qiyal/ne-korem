@@ -11,6 +11,7 @@ import {Editorial} from '../../../objects/editorial';
 })
 export class ProfileMyEditorialsComponent implements OnInit {
   editors: Editorial[] = [];
+  subscribeEditors: Editorial[] = [];
 
   constructor(
     private editorialListService: EditorialListService,
@@ -20,6 +21,7 @@ export class ProfileMyEditorialsComponent implements OnInit {
 
   ngOnInit(): void {
     this.gtet();
+    this.getSubscribeEditors();
   }
 
   gtet() {
@@ -29,6 +31,16 @@ export class ProfileMyEditorialsComponent implements OnInit {
 
       this.editorialListService.getEditorialsHasUser(userId).subscribe(res2 => {
         this.editors = res2;
+      });
+    });
+  }
+
+  getSubscribeEditors() {
+    this.userService.getUserByLogin(this.authService.authUserLogin).subscribe(res => {
+      let userId = res[0].id;
+
+      this.editorialListService.getSubscriberEditors(userId).subscribe(res2 => {
+        this.subscribeEditors = res2;
       });
     });
   }

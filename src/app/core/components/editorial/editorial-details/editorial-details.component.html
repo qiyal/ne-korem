@@ -15,7 +15,7 @@
         <h1>{{editor.title}}</h1>
 
         <button class="btn-dev btn-sub" *ngIf="canDo()" (click)="doSubs()">Subscribe</button>
-        <button class="btn-dev btn-un" *ngIf="!canDo()" (click)="doUnSubs()">Unsubscribe</button>
+        <button class="btn-dev btn-un" *ngIf="!canDo() && user.login !== getAuthLogin()" (click)="doUnSubs()">Unsubscribe</button>
 
       </div>
     </div>
