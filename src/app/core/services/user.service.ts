@@ -28,8 +28,8 @@ export class UserService {
     return this._http.post<User>(this.api + `/users`, user);
   }
 
-  getUserEditorials(id: number): Observable<Editorial[]> {
-    return this._http.get<Editorial[]>(this.api + `/users/${id}/editorials`);
+  updateUser(user: User) {
+    return this._http.patch(this.api + `/users/${user.id}`, user);
   }
 
   getUserEditorialsWithNe(id: number, neId: number): Observable<Editorial[]> {

@@ -21,7 +21,7 @@ export class EditorialsListCardComponent implements OnInit {
   }
 
   getUser() {
-    this.userService.getUserById(this.editor.id).subscribe(res => {
+    this.userService.getUserById(this.editor.userId).subscribe(res => {
       this.user = res;
     });
   }

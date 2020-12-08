@@ -10,7 +10,9 @@ import {Editorial} from '../../../objects/editorial';
 export class EditorialsListComponent implements OnInit {
   editorialList: Editorial[];
 
-  constructor(private editorialListService: EditorialListService) { }
+  constructor(
+    private editorialListService: EditorialListService
+  ) { }
 
   ngOnInit(): void {
     this.getEditorialList();

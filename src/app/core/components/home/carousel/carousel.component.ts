@@ -1,6 +1,9 @@
 import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Movie} from '../../../objects/movie';
 import {MovieService} from '../../../services/movie.service';
+import {UserService} from '../../../services/user.service';
+import {AuthService} from '../../../services/auth.service';
+import {User} from '../../../objects/user';
 
 @Component({
   selector: 'app-carousel',
@@ -25,27 +28,23 @@ export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
   showMovieDetail;
   aboutClick = true;
   detailsClick = false;
+  clickAdd = false;
 
   constructor(
-    private movieService: MovieService
+    private movieService: MovieService,
+    private userService: UserService,
+    private authService: AuthService
   ) { }
 
   ngOnChanges(changes: SimpleChanges) {}
 
   ngOnInit(): void {
-    // this.getMovies();
     this.lastShowMovie = null;
     this.showMovieDetail = false;
   }
 
   ngOnDestroy() {
   }
-
-  // getMovies() {
-  //   this.movieService.get10MoviesByGenre(this.genre).subscribe(res => {
-  //     this.movies = res;
-  //   });
-  // }
 
   onClickMovieCarouselCard(movie: Movie) {
     if (movie !== this.lastShowMovie) {
@@ -86,5 +85,39 @@ export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
   closeDetail() {
     this.showMovieDetail = false;
     this.lastShowMovie = null;
+  }
+
+  addToFa(id: number) {
+    this.userService.getUserByLogin(this.authService.authUserLogin).subscribe(userRes => {
+      let user: User = userRes[0];
+      let has = false;
+      this.clickAdd = !this.clickAdd;
+
+      for (let i = 0; i < user.favoriteMovie.length; i++) {
+        if (id === user.favoriteMovie[i]) {
+          has = true;
+          break;
+        }
+      }
+
+      if (has === false && this.clickAdd === true) {
+        console.log("Add");
+        user.favoriteMovie.push(id);
+        this.userService.updateUser(user).subscribe();
+      }
+
+      if (has === true && this.clickAdd === false) {
+        console.log("NO");
+
+        let newArr = [];
+        for (let i = 0; i < user.favoriteMovie.length; i++) {
+          if (id !== user.favoriteMovie[i]) {
+            newArr.push(user.favoriteMovie[i]);
+          }
+        }
+        user.favoriteMovie = newArr;
+        this.userService.updateUser(user).subscribe();
+      }
+    });
   }
 }

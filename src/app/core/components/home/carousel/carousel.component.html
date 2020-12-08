@@ -24,8 +24,7 @@
         <p [ngStyle]="{'font-size': '16px'}">
           <span [ngStyle]="{'color': setRating(lastShowMovie.rating)}">{{lastShowMovie.rating}}</span>
           <span> {{lastShowMovie.date}},</span>
-          <span> боевик, комедия, </span>
-          <span>США </span>
+          <span> {{lastShowMovie.genres | appendStrings: ','}} </span>
           <span>{{lastShowMovie.timeHour}}</span>
         </p>
         <p class="movie-title1">{{lastShowMovie.text}}</p>
@@ -35,12 +34,13 @@
             <mat-icon>play_arrow</mat-icon>
             <span>Смотреть</span>
           </button>
-          <button class="action-btns">
-            <mat-icon>bookmark</mat-icon>
+          <button class="action-btns" (click)="addToFa(lastShowMovie.id)">
+            <mat-icon *ngIf="!clickAdd">bookmark</mat-icon>
+            <mat-icon *ngIf="clickAdd">done</mat-icon>
           </button>
-          <button class="action-btns">
-            <mat-icon>videocam</mat-icon>
-          </button>
+<!--          <button class="action-btns">-->
+<!--            <mat-icon>videocam</mat-icon>-->
+<!--          </button>-->
         </div>
       </div>
 
@@ -90,7 +90,7 @@
 
             <div>Оригинальное название</div>
             <ul>
-              <li>The Gentlemen</li>
+              <li>{{lastShowMovie.name}}</li>
             </ul>
           </div>
         </div>

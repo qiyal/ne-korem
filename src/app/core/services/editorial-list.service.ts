@@ -21,10 +21,11 @@ export class EditorialListService {
     return this.http.get<Editorial>(this.api + `/editorials/${id}`);
   }
 
-  updateOnlySubs(obj: Editorial): Observable<Editorial> {
-    // console.log('id:' + id);
-    // console.log('subs: ' + subs);
+  getEditorialsHasUser(id: number): Observable<Editorial[]> {
+    return this.http.get<Editorial[]>(this.api + `/users/${id}/editorials`);
+  }
 
+  updateOnlySubs(obj: Editorial): Observable<Editorial> {
     return this.http.put<Editorial>(this.api + `/editorials/${obj.id}`, obj);
   }
 }

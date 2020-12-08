@@ -1,5 +1,3 @@
-import {ContinueMovies} from './continue-movies';
-
 export class User {
   constructor(
     public id: number,

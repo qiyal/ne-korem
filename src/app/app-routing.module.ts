@@ -18,6 +18,7 @@ import {SignUpComponent} from './core/components/sign-up/sign-up.component';
 import {ProfileMyMoviesComponent} from './core/components/profile/profile-my-movies/profile-my-movies.component';
 import {MoviesComponent} from './shared/movies/movies.component';
 import {EditorialDetailsComponent} from './core/components/editorial/editorial-details/editorial-details.component';
+import {ProfileMyEditorialsComponent} from './core/components/profile/profile-my-editorials/profile-my-editorials.component';
 
 
 const routes: Routes = [
@@ -45,6 +46,10 @@ const routes: Routes = [
       {
         path: 'my-favorite-movies',
         component: ProfileFavoriteMoviesComponent
+      },
+      {
+        path: 'my-editorials',
+        component: ProfileMyEditorialsComponent
       }
     ]
   },
