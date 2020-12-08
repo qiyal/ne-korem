@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Movie} from '../../core/objects/movie';
+import {Movie} from '../../../objects/movie';
 import {ActivatedRoute} from '@angular/router';
-import {MovieService} from '../../core/services/movie.service';
+import {MovieService} from '../../../services/movie.service';
+import {User} from '../../../objects/user';
+import {UserService} from '../../../services/user.service';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-movie-details',
@@ -16,10 +19,13 @@ export class MovieDetailsComponent implements OnInit {
   inputData1: Movie[] = [];
   inputData2: Movie[] = [];
   status;
+  clickAdd = false;
 
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService,
+    private userService: UserService,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -78,4 +84,37 @@ export class MovieDetailsComponent implements OnInit {
     }
   }
 
+  addToFa() {
+    this.userService.getUserByLogin(this.authService.authUserLogin).subscribe(userRes => {
+      let user: User = userRes[0];
+      let has = false;
+      this.clickAdd = !this.clickAdd;
+
+      for (let i = 0; i < user.favoriteMovie.length; i++) {
+        if (this.movie.id === user.favoriteMovie[i]) {
+          has = true;
+          break;
+        }
+      }
+
+      if (has === false && this.clickAdd === true) {
+        console.log("Add");
+        user.favoriteMovie.push(this.movie.id);
+        this.userService.updateUser(user).subscribe();
+      }
+
+      if (has === true && this.clickAdd === false) {
+        console.log("NO");
+
+        let newArr = [];
+        for (let i = 0; i < user.favoriteMovie.length; i++) {
+          if (this.movie.id !== user.favoriteMovie[i]) {
+            newArr.push(user.favoriteMovie[i]);
+          }
+        }
+        user.favoriteMovie = newArr;
+        this.userService.updateUser(user).subscribe();
+      }
+    });
+  }
 }

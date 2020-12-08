@@ -2,7 +2,7 @@
   <div class="flex-box">
 
     <div class="card-img">
-      <img src="{{card.photoUrl}}" alt="">
+      <img [routerLink]="['/editorial', card.id]" src="{{card.photoUrl}}" alt="">
     </div>
 
     <div class="card-text">
@@ -12,7 +12,7 @@
     </div>
 
     <div class="card-btn">
-      <button class="add-btn">
+      <button class="add-btn" (click)="addSybs()">
         Add
       </button>
     </div>

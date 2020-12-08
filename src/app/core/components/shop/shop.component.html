@@ -1,4 +1,4 @@
 <main>
-  <app-carousel [movies]="inputData1" [genre]="'drama'"  [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
-  <app-carousel [movies]="inputData2" [genre]="'anime'" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
+  <app-carousel [url]="'/shop/genre'" [movies]="inputData1" [genre]="'drama'"  [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
+  <app-carousel [url]="'/shop/genre'" [movies]="inputData2" [genre]="'anime'" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
 </main>

@@ -7,13 +7,13 @@ import { HeaderComponent } from './shared/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './core/components/home/home.component';
-import { ContinueViewingComponent } from './core/components/home/continue-viewing/continue-viewing.component';
+import { ContinueViewingComponent } from './shared/continue-viewing/continue-viewing.component';
 import { CardComponent } from './shared/cards/card/card.component';
 import {MatIconModule} from '@angular/material/icon';
-import { CarouselComponent } from './core/components/home/carousel/carousel.component';
+import { CarouselComponent } from './shared/carousel/carousel.component';
 import { CarouselCardComponent } from './shared/cards/carousel-card/carousel-card.component';
-import { EditorialBoxComponent } from './core/components/home/editorial-box/editorial-box.component';
-import { EditorialsListComponent } from './core/components/home/editorials-list/editorials-list.component';
+import { EditorialBoxComponent } from './shared/editorial-box/editorial-box.component';
+import { EditorialsListComponent } from './shared/editorials-list/editorials-list.component';
 import { ConverternumberPipe } from './core/pipes/converternumber.pipe';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ShopComponent } from './core/components/shop/shop.component';
@@ -27,7 +27,7 @@ import {EditorialBoxService} from './core/services/editorial-box.service';
 import {EditorialListService} from './core/services/editorial-list.service';
 import {EditorialListCardService} from './core/services/editorial-list-card.service';
 import {LoggerService} from './core/services/logger.service';
-import { MovieDetailsComponent } from './shared/movie-details/movie-details.component';
+import { MovieDetailsComponent } from './core/components/movies/movie-details/movie-details.component';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 import { ProfileComponent } from './core/components/profile/profile.component';
 import {AuthService} from './core/services/auth.service';
@@ -46,13 +46,15 @@ import {HttpClientModule} from '@angular/common/http';
 import { ProfileMyMoviesComponent } from './core/components/profile/profile-my-movies/profile-my-movies.component';
 import { FirstCharToUppercasePipe } from './core/pipes/first-char-to-uppercase.pipe';
 import { EditorialsListCardComponent } from './shared/cards/editorials-list-card/editorials-list-card.component';
-import { MoviesComponent } from './shared/movies/movies.component';
+import { MoviesComponent } from './core/components/movies/movies.component';
 import { EditorialDetailsComponent } from './core/components/editorial/editorial-details/editorial-details.component';
 import { ProfileMyEditorialsComponent } from './core/components/profile/profile-my-editorials/profile-my-editorials.component';
 import { AppendStringsPipe } from './core/pipes/append-strings.pipe';
 import { PayDialogComponent } from './shared/dialogs/pay-dialog/pay-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { EditorialCreateComponent } from './core/components/editorial/editorial-create/editorial-create.component';
+import {CommonModule} from '@angular/common';
+import { ShopGenreComponent } from './core/components/shop/shop-genre/shop-genre.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +90,7 @@ import { EditorialCreateComponent } from './core/components/editorial/editorial-
     AppendStringsPipe,
     PayDialogComponent,
     EditorialCreateComponent,
+    ShopGenreComponent,
   ],
   imports: [
     BrowserModule,

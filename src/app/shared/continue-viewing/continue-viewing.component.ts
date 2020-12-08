@@ -1,8 +1,8 @@
 import {Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
-import {ContinueMovieService} from '../../../services/continue-movie.service';
-import {AuthService} from '../../../services/auth.service';
-import {UserService} from '../../../services/user.service';
-import {ContinueMovies} from '../../../objects/continue-movies';
+import {ContinueMovieService} from '../../core/services/continue-movie.service';
+import {AuthService} from '../../core/services/auth.service';
+import {UserService} from '../../core/services/user.service';
+import {ContinueMovies} from '../../core/objects/continue-movies';
 
 @Component({
   selector: 'app-continue-viewing',

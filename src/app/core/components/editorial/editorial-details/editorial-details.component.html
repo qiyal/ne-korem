@@ -45,7 +45,7 @@
             {{editor.texts[i]}}
           </div>
 
-          <div class="card-movie" [routerLink]="['/movie', movies[i].id]">
+          <div class="card-movie" [routerLink]="['../../selection/movie', movies[i].id]">
             <div class="movie-img">
               <img [src]="movies[i].imgSrc" alt="Movie image">
             </div>

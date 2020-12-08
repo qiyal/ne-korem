@@ -23,16 +23,17 @@
           <p class="movie-title1">{{movie.text}}</p>
 
           <div class="btns-box">
-            <button class="watch-movie">
-              <mat-icon>play_arrow</mat-icon>
-              <span>Смотреть</span>
+<!--            <button class="watch-movie">-->
+<!--              <mat-icon>play_arrow</mat-icon>-->
+<!--              <span>Смотреть</span>-->
+<!--            </button>-->
+            <button class="action-btns" (click)="addToFa()">
+              <mat-icon *ngIf="!clickAdd">bookmark</mat-icon>
+              <mat-icon *ngIf="clickAdd">done</mat-icon>
             </button>
-            <button class="action-btns">
-              <mat-icon>bookmark</mat-icon>
-            </button>
-            <button class="action-btns">
-              <mat-icon>videocam</mat-icon>
-            </button>
+<!--            <button class="action-btns">-->
+<!--              <mat-icon>videocam</mat-icon>-->
+<!--            </button>-->
           </div>
         </div>
 

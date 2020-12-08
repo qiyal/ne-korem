@@ -1,6 +1,6 @@
 .card {
   display: block;
-  width: 100%;
+  width: 80%;
   box-sizing: border-box;
   padding: 24px 16px;
   background-color: #fff;
@@ -20,6 +20,7 @@
     height: 88px;
     border-radius: 16px;
     object-fit: cover;
+    cursor: pointer;
   }
 }
 
@@ -63,6 +64,7 @@
 .add-btn {
   transform-origin: center;
   transition: all 300ms ease-in-out;
+  cursor: pointer;
 }
 
 .add-btn:hover {

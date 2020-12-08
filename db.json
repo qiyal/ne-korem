@@ -41,7 +41,10 @@
         20,
         21
       ],
-      "favoriteMovie": [],
+      "favoriteMovie": [
+        11,
+        12
+      ],
       "subscribeEditorials": []
     },
     {
@@ -580,7 +583,7 @@
         "text - 1",
         "text - 2",
         "text - 3",
-        "text text - 4 ee"
+        "text text - 4 eee"
       ],
       "price": 0
     },

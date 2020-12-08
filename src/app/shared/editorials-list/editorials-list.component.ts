@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {EditorialListService} from '../../../services/editorial-list.service';
-import {Editorial} from '../../../objects/editorial';
+import {EditorialListService} from '../../core/services/editorial-list.service';
+import {Editorial} from '../../core/objects/editorial';
 
 @Component({
   selector: 'app-editorials-list',

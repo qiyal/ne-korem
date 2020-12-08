@@ -1,11 +1,11 @@
 import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges} from '@angular/core';
-import {Movie} from '../../../objects/movie';
-import {MovieService} from '../../../services/movie.service';
-import {UserService} from '../../../services/user.service';
-import {AuthService} from '../../../services/auth.service';
-import {User} from '../../../objects/user';
+import {Movie} from '../../core/objects/movie';
+import {MovieService} from '../../core/services/movie.service';
+import {UserService} from '../../core/services/user.service';
+import {AuthService} from '../../core/services/auth.service';
+import {User} from '../../core/objects/user';
 import {MatDialog} from '@angular/material/dialog';
-import {PayDialogComponent} from '../../../../shared/dialogs/pay-dialog/pay-dialog.component';
+import {PayDialogComponent} from '../dialogs/pay-dialog/pay-dialog.component';
 
 @Component({
   selector: 'app-carousel',
@@ -25,6 +25,7 @@ export class CarouselComponent implements OnChanges, OnInit, OnDestroy {
   private _checkGenre;
   @Input() movies: Movie[];
   @Output() getGenre = new EventEmitter<string>();
+  @Input() url;
 
   lastShowMovie: Movie;
   showMovieDetail;

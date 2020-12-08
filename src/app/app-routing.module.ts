@@ -1,74 +1,36 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './core/components/home/home.component';
-import {ShopComponent} from './core/components/shop/shop.component';
-import {EditorialComponent} from './core/components/editorial/editorial.component';
 import {CatalogComponent} from './core/components/catalog/catalog.component';
-import {MovieDetailsComponent} from './shared/movie-details/movie-details.component';
 import {ErrorPageComponent} from './shared/error-page/error-page.component';
-import {ProfileComponent} from './core/components/profile/profile.component';
 import {AuthStatusGuard} from './core/guards/auth-status.guard';
 import {LoginComponent} from './core/components/login/login.component';
 import {NavBarGuard} from './core/guards/nav-bar.guard';
-import {ProfileContinueMoviesComponent} from './core/components/profile/profile-continue-movies/profile-continue-movies.component';
-import {ProfileFavoriteMoviesComponent} from './core/components/profile/profile-favorite-movies/profile-favorite-movies.component';
 import {LoginPageGuard} from './core/guards/login-page.guard';
 import {ProfilePageChildCompAccessGuard} from './core/guards/profile-page-child-comp-access.guard';
 import {SignUpComponent} from './core/components/sign-up/sign-up.component';
-import {ProfileMyMoviesComponent} from './core/components/profile/profile-my-movies/profile-my-movies.component';
-import {MoviesComponent} from './shared/movies/movies.component';
-import {EditorialDetailsComponent} from './core/components/editorial/editorial-details/editorial-details.component';
-import {ProfileMyEditorialsComponent} from './core/components/profile/profile-my-editorials/profile-my-editorials.component';
-import {EditorialCreateComponent} from './core/components/editorial/editorial-create/editorial-create.component';
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'selection/movie/:id', component: MovieDetailsComponent },
-  { path: 'selection/genre/:genre', component: MoviesComponent },
-  { path: 'shop', component: ShopComponent },
-  { path: 'shop/genre/:genre', component: MoviesComponent },
-  { path: 'editorial', component: EditorialComponent },
-  { path: 'editorial/:id', component: EditorialDetailsComponent },
-  { path: 'editorial/:id/edit', component: EditorialCreateComponent },
-  // { path: 'editorial/', component: EditorialCreateComponent },
+  {
+    path: 'selection',
+    loadChildren: () => import('./core/modules/movie/movie.module').then(m => m.MovieModule)
+  },
+  {
+    path: 'shop',
+    loadChildren: () => import('./core/modules/shop/shop.module').then(m => m.ShopModule)
+  },
+  {
+    path: 'editorial',
+    loadChildren: () => import('./core/modules/editorial/editorial.module').then(m => m.EditorialModule)
+  },
   { path: 'catalog', component: CatalogComponent },
-  // {
-  //   path: 'selection',
-  //   children: [
-  //     {
-  //       path: 'movie/:id',
-  //       component: MovieDetailsComponent
-  //     },
-  //     {
-  //       path: 'genre/:type',
-  //       component: MoviesComponent
-  //     }
-  //   ]
-  // },
   {
     path: 'profile',
-    component: ProfileComponent,
+    loadChildren: () => import('./core/modules/profile/profile.module').then(m => m.ProfileModule),
     canActivate: [AuthStatusGuard],
     canActivateChild: [ProfilePageChildCompAccessGuard],
-    children: [
-      {
-        path: '',
-        component: ProfileContinueMoviesComponent,
-      },
-      {
-        path: 'my-movies',
-        component: ProfileMyMoviesComponent
-      },
-      {
-        path: 'my-favorite-movies',
-        component: ProfileFavoriteMoviesComponent
-      },
-      {
-        path: 'my-editorials',
-        component: ProfileMyEditorialsComponent
-      }
-    ]
   },
   {
     path: 'login',

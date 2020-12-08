@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Movie} from '../../../objects/movie';
-import {EditorialBoxService} from '../../../services/editorial-box.service';
-import {Banner} from '../../../objects/banner';
-import {MovieService} from '../../../services/movie.service';
+import {Movie} from '../../core/objects/movie';
+import {EditorialBoxService} from '../../core/services/editorial-box.service';
+import {Banner} from '../../core/objects/banner';
+import {MovieService} from '../../core/services/movie.service';
 
 @Component({
   selector: 'app-editorial-box',
