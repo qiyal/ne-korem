@@ -9,4 +9,33 @@ main {
     font-size: 20px;
     line-height: 16px;
   }
+
+  .wrapper {
+    padding: 100px 300px;
+
+    .content {
+
+      h1 {
+        font-size: 28px;
+        line-height: 24px;
+        font-weight: bold;
+        color: #d38123;
+        margin-bottom: 25px;
+      }
+
+      h3 {
+        font-size: 22px;
+        line-height: 18px;
+        font-weight: bold;
+        color: #d38123;
+        margin: 70px 0 30px;
+      }
+
+      input {
+        width: 100%;
+        padding: 15px 25px;
+        margin-bottom: 15px;
+      }
+    }
+  }
 }

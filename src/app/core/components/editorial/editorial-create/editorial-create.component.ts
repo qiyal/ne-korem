@@ -53,28 +53,33 @@ export class EditorialCreateComponent implements OnInit {
       photoUrl: ['', Validators.required],
       title: ['', Validators.required],
       movieIds: this.fb.array([
-        this.fb.control(-1, Validators.required),
+        // this.fb.control(-1, Validators.required),
       ]),
       subscriber: this.fb.array([
-        this.fb.control(-1),
+        // this.fb.control(-1),
       ]),
       texts: this.fb.array([
-        this.fb.control(-1, Validators.required),
+        // this.fb.control(-1, Validators.required),
       ]),
-      price: [-1, Validators.required]
+      price: [0]
     });
   }
 
   setFormData() {
-    console.log(this.editor)
+    for(let i = 0; i < this.editor.movieIds.length; i++) {
+      this.addMovieIds();
+    }
+    for(let i = 0; i < this.editor.subscriber.length; i++) {
+      this.addSubs();
+    }
+    for(let i = 0; i < this.editor.texts.length; i++) {
+      this.addTexts();
+    }
     this.formEditor.setValue(this.editor);
-    this.movieIds.setValue(this.editor.movieIds);
-    this.subscriber.setValue(this.editor.subscriber);
-    this.texts.setValue(this.editor.texts);
   }
 
   get subscriber() {
-    return this.formEditor.get('subscriber');
+    return this.formEditor.get('subscriber') as FormArray;
   }
 
   get movieIds() {
@@ -90,11 +95,23 @@ export class EditorialCreateComponent implements OnInit {
   }
 
   addMovieIds() {
-    this.movieIds.push(new FormControl(0, [Validators.required]));
+    this.movieIds.push(new FormControl(-1, [Validators.required]));
     // this.addTexts();
   }
 
   addTexts() {
-    this.texts.push(new FormControl(0, [Validators.required]));
+    this.texts.push(new FormControl('', [Validators.required]));
+  }
+
+  addSubs() {
+    this.subscriber.push(new FormControl(-1, [Validators.required]));
+  }
+
+  deleteMovie(index: number) {
+    this.movieIds.push(new FormControl(-1, [Validators.required]));
+  }
+
+  save() {
+    console.log(this.formEditor.value)
   }
 }

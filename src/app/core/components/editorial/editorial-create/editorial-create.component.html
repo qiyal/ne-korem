@@ -1,41 +1,49 @@
 <main>
   <div class="wrapper">
 
+    <div class="content">
 
-    <form [formGroup]="formEditor">
+      <h1>New Editor</h1>
 
-      <input type="text" formControlName="title" placeholder="Title" required>
+      <form [formGroup]="formEditor">
 
-      <input type="text" formControlName="photoUrl" placeholder="Image url" required>
+        <label>Title: 
+          <input type="text" formControlName="title" placeholder="Title" required>
+        </label>
+        
+        <label>Image url:
+        <input type="text" formControlName="photoUrl" placeholder="Image url" required>
+        </label>
+        
+        <div formArrayName="movieIds">
+          <h3>Movies</h3>
+  
+          <div *ngFor="let movieId of movieIds.controls; let mi = index">
+            <label>
+              MovieId - {{mi}}:
+              <input type="text" [formControlName]="mi">
+            </label>
+          </div>
 
-      <input type="text" formControlName="price" placeholder="Price" required>
-
-      <div formArrayName="movieIds">
-        <h3>Movies</h3> <button (click)="addMovieIds()">Add Alias</button>
-
-        <div *ngFor="let movieId of movieIds.controls; let mi = index">
-          <label>
-            MovieId - {{mi}}:
-            <input type="text" [formControlName]="mi">
-          </label>
+          <button (click)="addMovieIds()">Add Alias</button>
         </div>
-      </div>
-
-      <div formArrayName="texts">
-        <h3>Texts</h3> <button (click)="addTexts()">Add Text</button>
-
-        <div *ngFor="let text of texts.controls; let ti = index">
-          <label>
-            Text-{{ti}}:
-            <input type="text" [formControlName]="ti">
-          </label>
+  
+        <div formArrayName="texts">
+          <h3>Texts</h3>
+  
+          <div *ngFor="let text of texts.controls; let ti = index">
+            <label>
+              Text-{{ti}}:
+              <input type="text" [formControlName]="ti">
+            </label>
+          </div>
         </div>
-      </div>
 
-<!--      <input type="text" *ngFor="let mf of movieIds" [formControlName]="mf" required>-->
-
-<!--      <input type="text" *ngFor="let mt of texts" [formControlName]="mt" required>-->
-    </form>
+        <button (click)="save()">Save</button>
+      </form>
+    
+    </div>  
+    
 
   </div>
 </main>
