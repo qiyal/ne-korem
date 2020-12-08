@@ -52,6 +52,7 @@ import { ProfileMyEditorialsComponent } from './core/components/profile/profile-
 import { AppendStringsPipe } from './core/pipes/append-strings.pipe';
 import { PayDialogComponent } from './shared/dialogs/pay-dialog/pay-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { EditorialCreateComponent } from './core/components/editorial/editorial-create/editorial-create.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     ProfileMyEditorialsComponent,
     AppendStringsPipe,
     PayDialogComponent,
+    EditorialCreateComponent,
   ],
   imports: [
     BrowserModule,

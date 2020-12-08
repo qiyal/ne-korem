@@ -19,6 +19,7 @@ import {ProfileMyMoviesComponent} from './core/components/profile/profile-my-mov
 import {MoviesComponent} from './shared/movies/movies.component';
 import {EditorialDetailsComponent} from './core/components/editorial/editorial-details/editorial-details.component';
 import {ProfileMyEditorialsComponent} from './core/components/profile/profile-my-editorials/profile-my-editorials.component';
+import {EditorialCreateComponent} from './core/components/editorial/editorial-create/editorial-create.component';
 
 
 const routes: Routes = [
@@ -26,8 +27,11 @@ const routes: Routes = [
   { path: 'selection/movie/:id', component: MovieDetailsComponent },
   { path: 'selection/genre/:genre', component: MoviesComponent },
   { path: 'shop', component: ShopComponent },
+  { path: 'shop/genre/:genre', component: MoviesComponent },
   { path: 'editorial', component: EditorialComponent },
   { path: 'editorial/:id', component: EditorialDetailsComponent },
+  { path: 'editorial/:id/edit', component: EditorialCreateComponent },
+  // { path: 'editorial/', component: EditorialCreateComponent },
   { path: 'catalog', component: CatalogComponent },
   // {
   //   path: 'selection',
