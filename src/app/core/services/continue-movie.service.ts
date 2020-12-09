@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import {LoggerService} from './logger.service';
 import {HttpClient} from '@angular/common/http';
-import {AuthService} from './auth.service';
-import {UserService} from './user.service';
 import {Observable} from 'rxjs';
-import {User} from '../objects/user';
 import {ContinueMovies} from '../objects/continue-movies';
+import {Movie} from '../objects/movie';
 
 @Injectable()
 export class ContinueMovieService {
@@ -22,5 +20,9 @@ export class ContinueMovieService {
 
   public deleteMovie(id: number): Observable<any> {
     return this.http.delete<any>(this.api + `/continueMovies/${id}`);
+  }
+
+  public getContinueMoviesUserAndMovie(idUser, idMovie): Observable<Movie> {
+    return this.http.get<Movie>(this.api + `/continueMovies?userId=${idUser}&movieId=${idMovie}`);
   }
 }

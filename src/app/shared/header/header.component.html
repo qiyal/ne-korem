@@ -7,14 +7,14 @@
     <a class="nav-link" routerLink="/home" routerLinkActive="is-active">Home</a>
     <a class="nav-link" routerLink="/shop" routerLinkActive="is-active">Shop</a>
     <a class="nav-link" routerLink="/editorial" routerLinkActive="is-active">Editorial</a>
-    <a class="nav-link" routerLink="/catalog" routerLinkActive="is-active">Catalog</a>
+    <a class="nav-link" [routerLink]="['/catalog', 'all']" routerLinkActive="is-active">Catalog</a>
     <button mat-icon-button aria-label="search btn" class="search-btn" (click)="clickSearch = !clickSearch">
       <mat-icon>search</mat-icon>
     </button>
   </nav>
 
-  <form *ngIf="clickSearch">
-    <input type="text" [ngModel]="input" placeholder="Films and serial">
+  <form *ngIf="clickSearch" (keypress)="doSearch($event)">
+    <input type="text" [(ngModel)]="input" placeholder="Films and serial" name="input">
     <button mat-icon-button aria-label="close btn" class="close-btn" (click)="clickSearch = !clickSearch">
       x
     </button>

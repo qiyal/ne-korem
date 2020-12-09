@@ -93,6 +93,17 @@
     </div>
   </div>
 
+  <div class="player-body">
+    <youtube-player (click)="startTimeRun()"
+      videoId="kP9TfCWaQT4"
+      suggestedQuality="highres"
+      [height]="500"
+      [width]="1000"
+      [startSeconds]="start"
+      [endSeconds]="end">
+    </youtube-player>
+  </div>
+
   <div class="carousels">
     <app-carousel [movies]="inputData1" [genre]="'comedy'" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>
     <app-carousel [movies]="inputData2" [genre]="'anime'" [checkGenre]="status" (getGenre)="checkGenreF($event)"></app-carousel>

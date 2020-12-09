@@ -55,6 +55,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { EditorialCreateComponent } from './core/components/editorial/editorial-create/editorial-create.component';
 import {CommonModule} from '@angular/common';
 import { ShopGenreComponent } from './core/components/shop/shop-genre/shop-genre.component';
+import {YouTubePlayerModule} from '@angular/youtube-player';
+import { EditorialCreateV2Component } from './core/components/editorial/editorial-create-v2/editorial-create-v2.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +93,7 @@ import { ShopGenreComponent } from './core/components/shop/shop-genre/shop-genre
     PayDialogComponent,
     EditorialCreateComponent,
     ShopGenreComponent,
+    EditorialCreateV2Component,
   ],
   imports: [
     BrowserModule,
@@ -101,7 +104,8 @@ import { ShopGenreComponent } from './core/components/shop/shop-genre/shop-genre
     MatChipsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    YouTubePlayerModule,
   ],
   providers: [
     MovieService,

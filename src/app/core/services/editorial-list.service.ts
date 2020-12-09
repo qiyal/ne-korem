@@ -36,4 +36,8 @@ export class EditorialListService {
   updateEditor(editor: Editorial): Observable<Editorial> {
     return this.http.put<Editorial>(this.api + `/editorials/${editor.id}`, editor);
   }
+
+  getEditorsBySearch(type: string): Observable<Editorial[]> {
+    return this.http.get<Editorial[]>(this.api + `/editorials?title_like=${type}`);
+  }
 }

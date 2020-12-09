@@ -3,18 +3,39 @@ main {
   background-color: #272d33;
   box-sizing: border-box;
   color: #e5e1dd;
-  min-height: 470px;
-
-  h1 {
-    margin-top: 150px;
-    text-align: center;
-    font-size: 64px;
-    color: #ec7822;
-  }
+  overflow: hidden;
 
   h2 {
     font-size: 20px;
     line-height: 16px;
   }
-  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+
+.content {
+  .box {
+    width: 85%;
+    margin: auto;
+  }
+
+  .cards-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    app-carousel-card {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.title {
+  margin: 50px 0 20px;
+
+  h2 {
+    color: #ff7918;
+    font-size: 28px;
+  }
 }

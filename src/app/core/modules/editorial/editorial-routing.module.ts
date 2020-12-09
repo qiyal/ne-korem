@@ -3,6 +3,9 @@ import {RouterModule, Routes} from '@angular/router';
 import {EditorialComponent} from '../../components/editorial/editorial.component';
 import {EditorialDetailsComponent} from '../../components/editorial/editorial-details/editorial-details.component';
 import {EditorialCreateComponent} from '../../components/editorial/editorial-create/editorial-create.component';
+import {EditorialEditGuard} from '../../guards/editorial-edit.guard';
+import {LoginPageGuard} from '../../guards/login-page.guard';
+import {EditorialCreateV2Component} from '../../components/editorial/editorial-create-v2/editorial-create-v2.component';
 
 const routes: Routes = [
   {
@@ -15,8 +18,14 @@ const routes: Routes = [
   },
   {
     path: ':id/edit',
-    component: EditorialCreateComponent
-  }
+    component: EditorialCreateComponent,
+    // canActivate: [EditorialEditGuard]
+  },
+  // {
+  //   path: ':id/',
+  //   component: EditorialCreateV2Component,
+  //   canActivate: [LoginPageGuard]
+  // }
 ];
 
 @NgModule({

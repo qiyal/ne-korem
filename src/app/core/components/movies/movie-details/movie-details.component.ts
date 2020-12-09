@@ -5,6 +5,9 @@ import {MovieService} from '../../../services/movie.service';
 import {User} from '../../../objects/user';
 import {UserService} from '../../../services/user.service';
 import {AuthService} from '../../../services/auth.service';
+import {ContinueMovies} from '../../../objects/continue-movies';
+import {ContinueMovieService} from '../../../services/continue-movie.service';
+import {interval} from 'rxjs';
 
 @Component({
   selector: 'app-movie-details',
@@ -21,11 +24,19 @@ export class MovieDetailsComponent implements OnInit {
   status;
   clickAdd = false;
 
+  continueHas = false;
+  continueMovie: ContinueMovies;
+  start = 0;
+  end = 0;
+  run = false;
+  time = 0;
+
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService,
     private userService: UserService,
-    private authService: AuthService
+    private authService: AuthService,
+    private continueMovieService: ContinueMovieService
   ) { }
 
   ngOnInit(): void {
@@ -33,11 +44,26 @@ export class MovieDetailsComponent implements OnInit {
     this.getMovie();
     this.getInputData1();
     this.getInputData2();
+    this.getContinueMovie();
     this.status = 'qwe';
   }
 
   checkGenreF(str: string) {
     this.status = str;
+  }
+
+  getContinueMovie() {
+    this.userService.getUserByLogin(this.authService.authUserLogin).subscribe(res => {
+      let user: User = res[0];
+
+      this.continueMovieService.getContinueMoviesUserAndMovie(user.id, this.movie.id).subscribe(res2 => {
+        this.continueMovie = res2[0];
+
+        if (undefined !== this.continueMovie) {
+          this.start = this.continueMovie.watchTime;
+        }
+      });
+    });
   }
 
   getMovie() {
@@ -116,5 +142,13 @@ export class MovieDetailsComponent implements OnInit {
         this.userService.updateUser(user).subscribe();
       }
     });
+  }
+
+  startTimeRun() {
+      // const interval = setInterval(() => {
+      //   console.log(++this.time);
+      // }, 1000);
+      // this.run = false;
+      // clearInterval(interval);
   }
 }

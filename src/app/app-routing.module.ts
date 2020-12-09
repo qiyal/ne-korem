@@ -25,7 +25,7 @@ const routes: Routes = [
     path: 'editorial',
     loadChildren: () => import('./core/modules/editorial/editorial.module').then(m => m.EditorialModule)
   },
-  { path: 'catalog', component: CatalogComponent },
+  { path: 'catalog/:type', component: CatalogComponent },
   {
     path: 'profile',
     loadChildren: () => import('./core/modules/profile/profile.module').then(m => m.ProfileModule),

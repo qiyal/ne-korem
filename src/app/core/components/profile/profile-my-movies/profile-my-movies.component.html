@@ -3,5 +3,5 @@
 </div>
 
 <div class="flex">
-  <app-carousel-card *ngFor="let movie of myMovies" [movie]="movie"></app-carousel-card>
+  <app-carousel-card [routerLink]="['/selection/movie', movie.id]" *ngFor="let movie of myMovies" [movie]="movie"></app-carousel-card>
 </div>

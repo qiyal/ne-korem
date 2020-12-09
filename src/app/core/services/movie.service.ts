@@ -30,4 +30,7 @@ export class MovieService {
     return this.http.get<Movie[]>(this.api + `/movies?genres_like=${genre}&_limit=10&discount_ne=100`);
   }
 
+  getMoviesBySeacrh(type: string): Observable<Movie[]> {
+    return this.http.get<Movie[]>(this.api + `/movies?name_like=${type}`);
+  }
 }
