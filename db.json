@@ -39,7 +39,8 @@
         18,
         19,
         20,
-        21
+        21,
+        16
       ],
       "favoriteMovie": [
         11,
@@ -53,10 +54,29 @@
       "email": "",
       "firstName": "Nico",
       "lastName": "Tom",
+      "photoUrl": "../../../assets/images/avatars/avatar1.png",
       "myMovies": [],
-      "favoriteMovie": [],
+      "favoriteMovie": [
+        1,
+        7
+      ],
       "myEditorials": [],
       "id": 3
+    },
+    {
+      "login": "nico10",
+      "password": "123",
+      "email": "",
+      "firstName": "Yerbo",
+      "lastName": "Pazyl",
+      "photoUrl": "../../../assets/images/avatars/avatar1.png",
+      "myMovies": [],
+      "favoriteMovie": [
+        1,
+        6
+      ],
+      "myEditorials": [],
+      "id": 4
     }
   ],
   "continueMovies": [
@@ -76,12 +96,6 @@
       "id": 3,
       "userId": 1,
       "movieId": 5,
-      "watchTime": 60
-    },
-    {
-      "id": 4,
-      "userId": 1,
-      "movieId": 6,
       "watchTime": 60
     }
   ],
@@ -568,22 +582,28 @@
       "id": 1,
       "userId": 1,
       "photoUrl": "../../../assets/images/editorial/edi1.jpeg",
-      "title": "Avengers",
+      "title": "Aven 3",
       "movieIds": [
         22,
         23,
         24,
-        25
+        25,
+        -1,
+        -1
       ],
       "subscriber": [
-        2
+        2,
+        3,
+        4
       ],
-      "text": "text text text",
+      "text": "text text textedsjfljsdlgjv njd",
       "texts": [
         "text - 1",
         "text - 2",
         "text - 3",
-        "text text - 4 eee"
+        "text text - 4 eee",
+        "dfsflksjfjsl",
+        ""
       ],
       "price": 0
     },
@@ -599,7 +619,8 @@
         19
       ],
       "subscriber": [
-        2
+        3,
+        4
       ],
       "texts": [
         "text - 1",
@@ -618,7 +639,9 @@
         20
       ],
       "subscriber": [
-        2
+        2,
+        3,
+        4
       ],
       "texts": [
         "text - 1"

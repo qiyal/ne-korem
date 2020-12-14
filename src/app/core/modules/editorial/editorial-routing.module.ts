@@ -6,6 +6,8 @@ import {EditorialCreateComponent} from '../../components/editorial/editorial-cre
 import {EditorialEditGuard} from '../../guards/editorial-edit.guard';
 import {LoginPageGuard} from '../../guards/login-page.guard';
 import {EditorialCreateV2Component} from '../../components/editorial/editorial-create-v2/editorial-create-v2.component';
+import {AuthService} from '../../services/auth.service';
+import {AuthStatusGuard} from '../../guards/auth-status.guard';
 
 const routes: Routes = [
   {
@@ -21,11 +23,11 @@ const routes: Routes = [
     component: EditorialCreateComponent,
     // canActivate: [EditorialEditGuard]
   },
-  // {
-  //   path: ':id/',
-  //   component: EditorialCreateV2Component,
-  //   canActivate: [LoginPageGuard]
-  // }
+  {
+    path: ':id/create',
+    component: EditorialCreateV2Component,
+    canActivate: [AuthStatusGuard]
+  }
 ];
 
 @NgModule({

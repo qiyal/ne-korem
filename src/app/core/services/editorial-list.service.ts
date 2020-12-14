@@ -40,4 +40,8 @@ export class EditorialListService {
   getEditorsBySearch(type: string): Observable<Editorial[]> {
     return this.http.get<Editorial[]>(this.api + `/editorials?title_like=${type}`);
   }
+
+  createEditor(data: object): Observable<Editorial> {
+    return this.http.post<Editorial>(this.api + `/editorials`, data);
+  }
 }

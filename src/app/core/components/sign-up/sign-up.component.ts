@@ -35,6 +35,7 @@ export class SignUpComponent implements OnInit {
       email: new FormControl(''),
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
+      photoUrl: new FormControl('../../../assets/images/avatars/avatar1.png'),
       myMovies: new FormArray([]),
       favoriteMovie: new FormArray([]),
       myEditorials: new FormArray([]),
